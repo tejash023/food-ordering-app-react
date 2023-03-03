@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { restaurantsList } from "../constants";
+import { Shimmer } from "react-shimmer";
+
 import RestaurantCards from "./RestaurantCard";
 
 function filterData(searchText, restaurants) {
   const filteredData = restaurants.filter((restaurant) =>
-    restaurant.data.name.toLowerCase().includes(searchText.toLowerCase)
+    restaurant?.data?.name?.toLowerCase().includes(searchText.toLowerCase)
   );
 
   return filteredData;
@@ -13,6 +14,7 @@ function filterData(searchText, restaurants) {
 const Body = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [shimmer, setShimmer] = useState(true);
 
   useEffect(() => {
     console.log("useEffect");
@@ -28,7 +30,9 @@ const Body = () => {
     setRestaurants(json.data?.cards[2]?.data?.data?.cards);
   }
 
-  return (
+  return restaurants.length == 0 ? (
+    <Shimmer width={260} height={180} />
+  ) : (
     <>
       <div className="search-container">
         <input
