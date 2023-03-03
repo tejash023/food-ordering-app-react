@@ -1,3 +1,6 @@
+import { restaurants } from "../constants";
+import RestaurantCards from "./ResturantCard";
+
 const Body = () => {
   return (
     <div className="restaurant-lists">
