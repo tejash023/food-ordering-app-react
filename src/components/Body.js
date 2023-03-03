@@ -1,19 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { restaurantsList } from "../constants";
 import RestaurantCards from "./RestaurantCard";
 
-function filterRestaurant(searchText, restaurants) {
-  console.log(searchText, restaurants);
+function filterData(searchText, restaurants) {
   const filteredData = restaurants.filter((restaurant) =>
     restaurant.data.name.toLowerCase().includes(searchText.toLowerCase)
   );
-  console.log(filteredData);
+
   return filteredData;
 }
 
 const Body = () => {
-  const [restaurants, setRestaurants] = useState(restaurantsList);
-  const [searchInput, setSearchInput] = useState("");
+  const [restaurants, setRestaurants] = useState([]);
+  const [searchText, setSearchText] = useState("");
+
+  useEffect(() => {
+    console.log("useEffect");
+    //API CALL
+    getRestaurants();
+  }, []);
+
+  async function getRestaurants() {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.6039168&lng=85.1360248&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+    setRestaurants(json.data?.cards[2]?.data?.data?.cards);
+  }
 
   return (
     <>
@@ -22,14 +35,16 @@ const Body = () => {
           type="text"
           className="search-input"
           placeholder="Search"
-          value={searchInput}
-          onChange={(e) => setSearchInput(e.target.value)}
+          value={searchText}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
         />
         <button
           className="search-btn"
           onClick={() => {
             //need to filter the data
-            const data = filterRestaurant(searchInput, restaurants);
+            const data = filterData(searchText, restaurants);
             // update the state - restuarants
             setRestaurants(data);
           }}
@@ -39,7 +54,7 @@ const Body = () => {
       </div>
       <div className="restaurant-lists">
         {restaurants.map((restaurant) => (
-          <RestaurantCards {...restaurant.data} />
+          <RestaurantCards {...restaurant.data} key={restaurant.data.id} />
         ))}
       </div>
     </>

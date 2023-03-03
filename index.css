@@ -6,7 +6,9 @@
   display: flex;
   justify-content: space-between;
   margin: 10px;
-  border: 1px solid black;
+  background-color: orangered;
+  color: white;
+  padding: 5px;
 }
 
 .nav-items > ul {
@@ -23,11 +25,12 @@
 }
 
 .card {
-  width: 200px;
-  border: 1px solid orangered;
+  width: 220px;
+  border: 1.5px solid orangered;
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
+  font-size: 0.75rem;
 }
 
 .card > img {
