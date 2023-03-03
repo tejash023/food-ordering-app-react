@@ -1,33 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const Title = () => {
-  return (
-    <a href="/">
-      <img
-        className="logo"
-        alt="logo"
-        src="https://icon-library.com/images/food-app-icon/food-app-icon-0.jpg"
-      />
-    </a>
-  );
-};
-
-const HeaderComponent = () => {
-  return (
-    <div className="header">
-      <Title />
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
+import Header from "./components/Header";
+import Body from "./components/Body";
+import Footer from "./components/Footer";
 
 const restaurants = [
   {
@@ -1735,37 +1711,29 @@ const restaurants = [
   },
 ];
 
-const RestaurantCards = ({ restaurant }) => {
+const RestaurantCards = ({
+  id,
+  name,
+  cuisines,
+  cloudinaryImageId,
+  lastMileTravelString,
+}) => {
   return (
-    <div className="card">
+    <div className="card" key={id}>
       <img
-        src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${restaurant.data.cloudinaryImageId}`}
+        src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${cloudinaryImageId}`}
       />
-      <h2>{restaurant.data?.name}</h2>
-      <h3>{restaurant.data?.cuisines.join(", ")}</h3>
-      <h4> {restaurant.data?.lastMileTravelString}</h4>
+      <h2>{name}</h2>
+      <h3>{cuisines.join(", ")}</h3>
+      <h4> {lastMileTravelString}</h4>
     </div>
   );
-};
-
-const Body = () => {
-  return (
-    <div className="restaurant-lists">
-      {restaurants.map((restaurant) => (
-        <RestaurantCards restaurant={restaurant} />
-      ))}
-    </div>
-  );
-};
-
-const Footer = () => {
-  return <h4>Footer</h4>;
 };
 
 const AppLayout = () => {
   return (
     <>
-      <HeaderComponent />
+      <Header />
       <Body />
       <Footer />
     </>
