@@ -35,9 +35,10 @@ const Body = () => {
    ** If restaurant is empty => shimmer UI
    ** If restaurant has data => actual UI Data */
 
-  return filteredRestaurants.length == 0 ? (
-    <Shimmer width={260} height={180} />
-  ) : (
+  // not render component (Early return)
+  if (!allRestaurants) return null;
+
+  return (
     <>
       <div className="search-container">
         <input
@@ -63,12 +64,18 @@ const Body = () => {
         </button>
       </div>
       <div className="restaurant-lists">
-        {filteredRestaurants.map((restaurant) => (
-          <RestaurantCards {...restaurant.data} key={restaurant.data.id} />
-        ))}
+        {filteredRestaurants.length == 0 ? (
+          <Shimmer width={260} height={180} />
+        ) : (
+          filteredRestaurants.map((restaurant) => (
+            <RestaurantCards {...restaurant.data} key={restaurant.data.id} />
+          ))
+        )}
       </div>
     </>
   );
 };
 
 export default Body;
+
+//<Shimmer width={260} height={180} />

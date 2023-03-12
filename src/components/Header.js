@@ -1,3 +1,8 @@
+const loggedInUser = () => {
+  //API Call
+  return false;
+};
+
 const Title = () => {
   return (
     <a href="/">
@@ -21,6 +26,9 @@ const Header = () => {
           <li>Contact</li>
           <li>Cart</li>
         </ul>
+      </div>
+      <div>
+        {loggedInUser ? <button>Log out</button> : <button>Login</button>}
       </div>
     </div>
   );
