@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Shimmer } from "react-shimmer";
 import RestaurantCards from "./RestaurantCard";
+import { ShimmerCards } from "./Shimmer";
 
 // filter data function - filter and return the resturants as per the input value
 function filterData(searchText, restaurants) {
@@ -38,13 +38,15 @@ const Body = () => {
   // not render component (Early return)
   if (!allRestaurants) return null;
 
-  return (
+  return allRestaurants?.length === 0 ? (
+    <ShimmerCards />
+  ) : (
     <>
       <div className="search-container">
         <input
           type="text"
           className="search-input"
-          placeholder="Search"
+          placeholder="Search restaurants.."
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
@@ -64,18 +66,12 @@ const Body = () => {
         </button>
       </div>
       <div className="restaurant-lists">
-        {filteredRestaurants.length == 0 ? (
-          <Shimmer width={260} height={180} />
-        ) : (
-          filteredRestaurants.map((restaurant) => (
-            <RestaurantCards {...restaurant.data} key={restaurant.data.id} />
-          ))
-        )}
+        {filteredRestaurants.map((restaurant) => (
+          <RestaurantCards {...restaurant.data} key={restaurant.data.id} />
+        ))}
       </div>
     </>
   );
 };
 
 export default Body;
-
-//<Shimmer width={260} height={180} />
