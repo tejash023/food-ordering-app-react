@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
+
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -97,4 +99,102 @@
   height: 20px;
   background-color: lightgrey;
   margin: 20px;
+}
+
+.restaurant-details {
+  margin: 5% 6%;
+}
+
+.restaurant-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 1px dotted rgb(129, 129, 129);
+  padding-bottom: 50px;
+}
+
+.restaurant-name h2 {
+  font-size: 1.5rem;
+  color: rgb(2, 2, 58);
+}
+
+.restaurant-name p {
+  font-size: 0.9rem;
+  color: rgb(129, 129, 129);
+}
+
+.restaurant-basics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.restaurant-basics p {
+  border-top: 1px solid rgb(129, 129, 129);
+  font-size: 0.8rem;
+  color: rgb(129, 129, 129);
+}
+
+.restaurant-menu p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.menu-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px dotted grey;
+  margin-bottom: 20px;
+}
+.item-details {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.item-details li {
+  list-style: none;
+  color: rgb(129, 129, 129);
+}
+.item-details p {
+  font-size: 1rem;
+  color: rgb(44, 44, 44);
+}
+.item-img {
+  width: 150px;
+}
+.item-img img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.footer {
+  background-color: black;
+  height: auto;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 25px;
+}
+
+.footer > ul {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: wheat;
+  list-style: none;
+}
+
+.footer > ul > a {
+  text-decoration: none;
+  color: white;
 }

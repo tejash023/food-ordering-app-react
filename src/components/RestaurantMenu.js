@@ -26,16 +26,48 @@ const RestaurantMenu = () => {
   ) : (
     <div className="restaurant-details">
       <div className="restaurant-info">
-        <h1>{restaurant.name}</h1>
-        <img src={IMG_CDN_URL + restaurant.cloudinaryImageId} />
-        <p>{restaurant.avgRating} stars</p>
-        <p>{restaurant.area}</p>
-        <p>{restaurant.city}</p>
-        <p>{restaurant.costForTwoMsg}</p>
+        <div className="restaurant-name">
+          <h2>{restaurant?.name}</h2>
+          <p>{restaurant?.cuisines}</p>
+          <p>
+            {restaurant?.area}, {restaurant?.city}
+          </p>
+        </div>
+        <div className="restaurant-basics">
+          <h4>⭐ {restaurant?.avgRating} </h4>
+
+          <p>{restaurant.totalRatingsString}</p>
+        </div>
       </div>
+      {/* <div className="restaurant-info">
+        <div className="restaurant-basics">
+          <img src={IMG_CDN_URL + restaurant.cloudinaryImageId} />
+          <div>
+            <h2>{restaurant.name}</h2>
+          </div>
+        </div>
+        <div className="additional-details">
+          <p>{restaurant.area}</p>
+          <p>{restaurant.city}</p>
+          <p>{restaurant.costForTwoMsg}</p>
+        </div>
+      </div>*/}
       <div className="restaurant-menu">
-        {Object.values(restaurant.menu.items).map((item) => (
-          <li>{item.name}</li>
+        <p>Menu</p>
+        {Object.values(restaurant?.menu?.items).map((item) => (
+          <div className="menu-items">
+            <div className="item-details">
+              <li>
+                <p>{item?.name}</p>
+              </li>
+              <li>₹{item?.price / 100}</li>
+            </div>
+            <div className="item-img">
+              {!item?.cloudinaryImageId ? null : (
+                <img src={IMG_CDN_URL + item?.cloudinaryImageId} />
+              )}
+            </div>
+          </div>
         ))}
       </div>
     </div>
