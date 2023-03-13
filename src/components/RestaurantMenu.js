@@ -28,7 +28,7 @@ const RestaurantMenu = () => {
       <div className="restaurant-info">
         <div className="restaurant-name">
           <h2>{restaurant?.name}</h2>
-          <p>{restaurant?.cuisines}</p>
+          <p>{restaurant?.cuisines?.join(", ")}</p>
           <p>
             {restaurant?.area}, {restaurant?.city}
           </p>
@@ -39,23 +39,11 @@ const RestaurantMenu = () => {
           <p>{restaurant.totalRatingsString}</p>
         </div>
       </div>
-      {/* <div className="restaurant-info">
-        <div className="restaurant-basics">
-          <img src={IMG_CDN_URL + restaurant.cloudinaryImageId} />
-          <div>
-            <h2>{restaurant.name}</h2>
-          </div>
-        </div>
-        <div className="additional-details">
-          <p>{restaurant.area}</p>
-          <p>{restaurant.city}</p>
-          <p>{restaurant.costForTwoMsg}</p>
-        </div>
-      </div>*/}
+
       <div className="restaurant-menu">
         <p>Menu</p>
         {Object.values(restaurant?.menu?.items).map((item) => (
-          <div className="menu-items">
+          <div className="menu-items" key={item?.id}>
             <div className="item-details">
               <li>
                 <p>{item?.name}</p>

@@ -61,18 +61,51 @@
 
 .card {
   width: 220px;
-  border: 1.5px solid orangered;
+  height: 240px;
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
   font-size: 0.75rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 0.5rem;
 }
 
 .card > img {
   width: 100%;
 }
 
+.resName {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(44, 44, 44);
+}
+
+.res-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ratings {
+  color: white;
+  padding: 3px 5px;
+  font-size: 0.7rem;
+}
+.green {
+  background-color: green;
+}
+.yellow {
+  background-color: #e68c47;
+}
+.red {
+  background-color: red;
+}
+.ratings i {
+  margin-right: 5px;
+}
 .restaurant-lists {
   flex-wrap: wrap;
   display: flex;
@@ -80,25 +113,31 @@
   justify-content: center;
 }
 
+.restaurant-lists a {
+  text-decoration: none;
+  color: rgb(66, 66, 66);
+}
+
 .shimmer-cards {
   width: 220px;
   height: 220px;
   background-color: lightgrey;
   margin: 20px;
+  height: 250px;
 }
 
 .shimmer-block {
-  width: 80%;
-  height: 350px;
+  height: 150px;
   background-color: lightgrey;
-  margin: auto 2%;
+  margin: 5% 6%;
+  border-radius: 10px;
 }
 
 .shimmer-lines {
-  width: 80%;
-  height: 20px;
+  height: 30px;
   background-color: lightgrey;
-  margin: 20px;
+  margin: 5% 6%;
+  border-radius: 10px;
 }
 
 .restaurant-details {
@@ -110,7 +149,7 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: 15px;
-  border-bottom: 1px dotted rgb(129, 129, 129);
+  border-bottom: 1.25px solid rgb(129, 129, 129);
   padding-bottom: 50px;
 }
 
@@ -149,7 +188,7 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: 20px;
-  border-bottom: 1px dotted grey;
+  border-bottom: 0.1px dotted rgb(129, 129, 129);
   margin-bottom: 20px;
 }
 .item-details {
