@@ -20,24 +20,27 @@ const Title = () => {
 const Header = () => {
   return (
     <div className="header">
-      <Title />
-      <div className="nav-items">
-        <ul>
-          <Link to="/">
-            <li>Home</li>
-          </Link>
-          <Link to="/about">
-            <li>About</li>
-          </Link>
-          <Link to="/contact">
-            <li>Contact</li>
-          </Link>
+      <div className="header-items">
+        <Title />
+        <div className="navigation-menu">
+          <div className="nav-items">
+            <ul>
+              <Link to="/">
+                <li>Home</li>
+              </Link>
+              <Link to="/about">
+                <li>About</li>
+              </Link>
+              <Link to="/contact">
+                <li>Contact</li>
+              </Link>
 
-          <li>Cart</li>
-        </ul>
-      </div>
-      <div>
-        {loggedInUser ? <button>Log out</button> : <button>Login</button>}
+              <Link>
+                <i class="fa fa-shopping-cart"></i>
+              </Link>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

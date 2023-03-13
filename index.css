@@ -7,27 +7,40 @@
 }
 
 .header {
+  box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px,
+    rgb(27 31 35 / 15%) 0px 0px 0px 1px;
+}
+
+.header-items {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: orangered;
 
+  margin: auto 5%;
   padding: 5px;
+}
+.navigation-menu {
+  display: flex;
+  align-items: center;
 }
 
 .nav-items > ul {
   list-style-type: none;
   display: flex;
   gap: 0.7rem;
+  align-items: center;
 }
 
 .nav-items > ul > a {
   text-decoration: none;
-  color: white;
+  color: rgb(2, 2, 58);
 }
 
 .nav-items > ul > li {
   padding: 10px;
+}
+.nav-items > ul > a > i {
+  font-size: 1.75rem;
 }
 
 .logo {
@@ -42,11 +55,11 @@
 }
 
 .search-container > input {
-  font-size: 1.25rem;
+  font-size: 1rem;
   padding: 6px 10px;
-  border: 1.5px solid orangered;
+  border: 0.5px solid orangered;
   outline: none;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .search-container > button {
   font-size: 1rem;
@@ -56,17 +69,17 @@
   color: white;
   background-color: orangered;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .card {
-  width: 220px;
-  height: 240px;
+  width: 240px;
+  height: 250px;
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
   font-size: 0.75rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -109,7 +122,7 @@
 .restaurant-lists {
   flex-wrap: wrap;
   display: flex;
-  margin: auto 3%;
+  margin: auto 2%;
   justify-content: center;
 }
 
@@ -119,11 +132,10 @@
 }
 
 .shimmer-cards {
-  width: 220px;
-  height: 220px;
+  width: 240px;
+  height: 250px;
   background-color: lightgrey;
   margin: 20px;
-  height: 250px;
 }
 
 .shimmer-block {
