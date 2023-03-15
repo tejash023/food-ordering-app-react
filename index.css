@@ -74,12 +74,12 @@
 
 .card {
   width: 240px;
-  height: 250px;
-
+  height: 255px;
+  border: 1px solid rgba(227, 227, 227, 0.489);
   padding: 10px;
   margin: 10px;
   font-size: 0.75rem;
-
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -87,21 +87,32 @@
 }
 
 .card:hover {
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
-    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  border-color: rgb(232, 232, 232);
+  box-shadow: rgba(28, 28, 28, 0.12) 0px 0.4rem 1.8rem;
+
   transition: all 0.3s ease-in;
 }
 
 .card > img {
   width: 100%;
+  border-radius: 10px;
 }
 
 .resName {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 400;
   color: rgb(44, 44, 44);
+  margin-bottom: 6px;
 }
 
+.res-name p {
+  color: #a8a5a5;
+  height: 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
 .res-info {
   display: flex;
   align-items: center;
