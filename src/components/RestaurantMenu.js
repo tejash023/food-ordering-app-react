@@ -34,21 +34,42 @@ const RestaurantMenu = () => {
           </p>
         </div>
         <div className="restaurant-basics">
-          <h4>⭐ {restaurant?.avgRating} </h4>
+          <h4>
+            <i class="fa fa-star"></i> {restaurant?.avgRating}{" "}
+          </h4>
 
           <p>{restaurant.totalRatingsString}</p>
         </div>
       </div>
 
       <div className="restaurant-menu">
-        <p>Menu</p>
+        <p>Total ({Object.values(restaurant?.menu?.items).length})</p>
         {Object.values(restaurant?.menu?.items).map((item) => (
           <div className="menu-items" key={item?.id}>
             <div className="item-details">
-              <li>
-                <p>{item?.name}</p>
-              </li>
-              <li>₹{item?.price / 100}</li>
+              <div className="item-extras">
+                {/* Check for veg/non veg */}
+                {item?.isVeg === 0 ? (
+                  <span className="nonveg">
+                    <i class="fa fa-circle"></i>
+                  </span>
+                ) : (
+                  <span className="veg">
+                    <i class="fa fa-circle"></i>
+                  </span>
+                )}
+                {/* Check for Bestsellers */}
+                {item?.isBestSeller && (
+                  <span className="bestseller">
+                    <i class="fa fa-star"></i> Bestseller
+                  </span>
+                )}
+              </div>
+
+              <h4>{item?.name}</h4>
+
+              <p>₹{item?.price / 100}</p>
+              <span className="item-desc">{item?.description}</span>
             </div>
             <div className="item-img">
               {!item?.cloudinaryImageId ? null : (

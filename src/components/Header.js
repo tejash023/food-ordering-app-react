@@ -7,13 +7,13 @@ const loggedInUser = () => {
 
 const Title = () => {
   return (
-    <a href="/">
+    <Link to="/">
       <img
         className="logo"
         alt="logo"
         src="https://icon-library.com/images/food-app-icon/food-app-icon-0.jpg"
       />
-    </a>
+    </Link>
   );
 };
 

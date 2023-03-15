@@ -75,7 +75,7 @@
 .card {
   width: 240px;
   height: 250px;
-  border-radius: 5px;
+
   padding: 10px;
   margin: 10px;
   font-size: 0.75rem;
@@ -84,6 +84,12 @@
   flex-direction: column;
   justify-content: space-around;
   gap: 0.5rem;
+}
+
+.card:hover {
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  transition: all 0.3s ease-in;
 }
 
 .card > img {
@@ -153,7 +159,7 @@
 }
 
 .restaurant-details {
-  margin: 5% 6%;
+  margin: 5% 10%;
 }
 
 .restaurant-info {
@@ -193,13 +199,14 @@
 .restaurant-menu p {
   font-size: 1.2rem;
   margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 .menu-items {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
   border-bottom: 0.1px dotted rgb(129, 129, 129);
   margin-bottom: 20px;
 }
@@ -209,14 +216,42 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
+  max-width: 80%;
 }
-.item-details li {
-  list-style: none;
-  color: rgb(129, 129, 129);
+.item-details h4 {
+  font-weight: 500;
 }
+
 .item-details p {
   font-size: 1rem;
   color: rgb(44, 44, 44);
+  margin-bottom: 5px;
+}
+
+.item-extras {
+  margin-top: 10px;
+}
+.item-desc {
+  font-size: 14px;
+  width: 80%;
+  color: #a7a2a2;
+  font-weight: 300;
+}
+
+.bestseller {
+  color: #ee9c00;
+  font-weight: 600;
+  font-size: 13px;
+}
+.nonveg {
+  color: red;
+  margin-right: 6px;
+  font-size: 13px;
+}
+.veg {
+  color: green;
+  margin-right: 6px;
+  font-size: 13px;
 }
 .item-img {
   width: 150px;
