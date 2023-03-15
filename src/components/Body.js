@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import RestaurantCards from "./RestaurantCard";
 import { ShimmerCards } from "./Shimmer";
 import { filterData } from "../utils/helper";
+import { FETCH_RESTAURANTS } from "../constants";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -15,14 +17,11 @@ const Body = () => {
   }, []);
 
   async function getRestaurants() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.6039168&lng=85.1360248&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(FETCH_RESTAURANTS);
     const json = await data.json();
     setAllRestaurants(json.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurants(json.data?.cards[2]?.data?.data?.cards);
   }
-  console.log(filteredRestaurants);
 
   /*
    ** Conditonal Rendering
@@ -31,6 +30,17 @@ const Body = () => {
 
   // not render component (Early return)
   if (!allRestaurants) return null;
+
+  //check if user online or offline
+  const isOnline = useOnline();
+
+  if (!isOnline) {
+    return (
+      <h2>
+        There is a problem with your internet connection. Please try again
+      </h2>
+    );
+  }
 
   return allRestaurants?.length === 0 ? (
     <ShimmerCards />
@@ -51,7 +61,6 @@ const Body = () => {
           onClick={() => {
             //need to filter the data
             const data = filterData(searchText, allRestaurants);
-            console.log("data", data);
             // update the state - restuarants
             setFilteredRestaurants(data);
           }}

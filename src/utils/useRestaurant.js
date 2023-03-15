@@ -1,25 +1,25 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
+// import { FETCH_RESTAURANTS } from "../constants";
 
-const useRestaurant = (resId) => {
-  //define state variables for restaurant
-  const [restaurant, setRestaurant] = useState(null);
+// const useRestaurant = () => {
+//   const [allRestaurants, setAllRestaurants] = useState([]);
+//   //const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+//   //const [searchText, setSearchText] = useState("");
 
-  //make an API call and fetch the restaurant data with the resId provided
-  useEffect(() => {
-    getRestaurantDetails();
-  }, []);
+//   useEffect(() => {
+//     //API CALL
+//     getRestaurants();
+//   }, []);
 
-  const getRestaurantDetails = async () => {
-    const response = await fetch(
-      `https://www.swiggy.com/dapi/menu/v4/full?lat=25.8773651&lng=86.5927887&menuId=${resId}`
-    );
-    const json = await response.json();
-    //console.log(json.data);
-    setRestaurant(json.data);
-  };
+//   async function getRestaurants() {
+//     const data = await fetch(FETCH_RESTAURANTS);
+//     const json = await data.json();
+//     setAllRestaurants(json.data?.cards[2]?.data?.data?.cards);
+//   }
 
-  //return restaurant Data
-  return restaurant;
-};
+//   return {
+//     allRestaurants,
+//   };
+// };
 
-export default useRestaurant;
+// export default useRestaurant;

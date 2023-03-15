@@ -2,12 +2,12 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { IMG_CDN_URL } from "../constants";
 import { ShimmerBlock } from "../components/Shimmer";
-import useRestaurant from "../utils/useRestaurant";
+import useRestaurantDetails from "../utils/useRestaurantDetails";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
 
-  const restaurant = useRestaurant(resId);
+  const restaurant = useRestaurantDetails(resId);
 
   return !restaurant ? (
     <ShimmerBlock />
