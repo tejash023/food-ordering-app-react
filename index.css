@@ -306,3 +306,17 @@
   text-decoration: none;
   color: white;
 }
+
+.error-button {
+  background-color: black;
+  margin: 10px 0;
+  padding: 8px 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.error-button a {
+  text-decoration: none;
+  color: white;
+}

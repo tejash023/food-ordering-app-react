@@ -13,6 +13,7 @@ const useRestaurantDetails = (resId) => {
   const getRestaurantDetails = async () => {
     const response = await fetch(FETCH_MENU_URL + resId);
     const json = await response.json();
+    console.log(json.data);
     setRestaurant(json.data);
   };
 
