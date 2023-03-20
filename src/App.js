@@ -8,8 +8,8 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 import Error from "./components/Error";
 import Contact from "./components/Contact";
-import RestaurantMenu from "./components/RestaurantMenu";
 import { ShimmerBlock } from "./components/Shimmer";
+import RestaurantDetails from "./components/RestaurantDetails";
 
 //lazy load about component
 const About = lazy(() => import("./components/About"));
@@ -48,7 +48,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/restaurant/:resId",
-        element: <RestaurantMenu />,
+        element: <RestaurantDetails />,
       },
     ],
   },
