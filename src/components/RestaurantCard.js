@@ -27,7 +27,7 @@ const RestaurantCards = ({
       <div className="res-info">
         {avgRating && (
           <p className={"ratings " + ratingType}>
-            <i class="fa fa-star"></i>
+            <i className="fa fa-star"></i>
             {avgRating}
           </p>
         )}

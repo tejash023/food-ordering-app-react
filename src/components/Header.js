@@ -36,7 +36,7 @@ const Header = () => {
               </Link>
 
               <Link>
-                <i class="fa fa-shopping-cart"></i>
+                <i className="fa fa-shopping-cart"></i>
               </Link>
             </ul>
           </div>

@@ -32,7 +32,7 @@ const RestaurantMenu = () => {
         </div>
         <div className="restaurant-basics">
           <h4>
-            <i class="fa fa-star"></i> {restaurant?.avgRating}{" "}
+            <i className="fa fa-star"></i> {restaurant?.avgRating}{" "}
           </h4>
           <p>{restaurant.totalRatingsString}</p>
         </div>
@@ -47,11 +47,11 @@ const RestaurantMenu = () => {
                 {/* Check for veg/non veg */}
                 {item.card.info?.itemAttribute.vegClassifier === "NONVEG" ? (
                   <span className="nonveg">
-                    <i class="fa fa-circle"></i>
+                    <i className="fa fa-circle"></i>
                   </span>
                 ) : (
                   <span className="veg">
-                    <i class="fa fa-circle"></i>
+                    <i className="fa fa-circle"></i>
                   </span>
                 )}
                 {/* Check for Bestsellers */}
