@@ -25,10 +25,12 @@ const RestaurantCards = ({
         <p>{cuisines.join(", ")}</p>
       </div>
       <div className="res-info">
-        <p className={"ratings " + ratingType}>
-          <i class="fa fa-star"></i>
-          {avgRating}
-        </p>
+        {avgRating && (
+          <p className={"ratings " + ratingType}>
+            <i class="fa fa-star"></i>
+            {avgRating}
+          </p>
+        )}
 
         <p> {lastMileTravelString}</p>
         <p> {costForTwoString}</p>

@@ -7,9 +7,18 @@ import useRestaurantDetails from "../utils/useRestaurantDetails";
 const RestaurantMenu = () => {
   const { resId } = useParams();
 
-  const restaurant = useRestaurantDetails(resId);
+  const { restaurant, restaurantMenu } = useRestaurantDetails(resId);
+  const recommendedMenu = restaurantMenu?.cards[2]?.card?.card?.itemCards;
 
-  return !restaurant ? (
+  console.log(restaurant);
+
+  // if (recommendedMenu) {
+  //   Object.values(recommendedMenu).map((item) => {
+  //     console.log(item.card.info);
+  //   });
+  // }
+
+  return !recommendedMenu ? (
     <ShimmerBlock />
   ) : (
     <div className="restaurant-details">
@@ -18,26 +27,25 @@ const RestaurantMenu = () => {
           <h2>{restaurant?.name}</h2>
           <p>{restaurant?.cuisines?.join(", ")}</p>
           <p>
-            {restaurant?.area}, {restaurant?.city}
+            {restaurant?.areaName}, {restaurant?.city}
           </p>
         </div>
         <div className="restaurant-basics">
           <h4>
             <i class="fa fa-star"></i> {restaurant?.avgRating}{" "}
           </h4>
-
           <p>{restaurant.totalRatingsString}</p>
         </div>
       </div>
 
       <div className="restaurant-menu">
-        <p>Total ({Object.values(restaurant?.menu?.items).length})</p>
-        {Object.values(restaurant?.menu?.items).map((item) => (
-          <div className="menu-items" key={item?.id}>
+        <p>Total ({Object.values(recommendedMenu).length})</p>
+        {Object.values(recommendedMenu).map((item) => (
+          <div className="menu-items" key={item.card.info?.id}>
             <div className="item-details">
               <div className="item-extras">
                 {/* Check for veg/non veg */}
-                {item?.isVeg === 0 ? (
+                {item.card.info?.itemAttribute.vegClassifier === "NONVEG" ? (
                   <span className="nonveg">
                     <i class="fa fa-circle"></i>
                   </span>
@@ -47,21 +55,20 @@ const RestaurantMenu = () => {
                   </span>
                 )}
                 {/* Check for Bestsellers */}
-                {item?.isBestSeller && (
-                  <span className="bestseller">
-                    <i class="fa fa-star"></i> Bestseller
-                  </span>
-                )}
+
+                <span className="bestseller">
+                  {item.card.info?.ratings?.aggregatedRating?.rating}
+                </span>
               </div>
 
-              <h4>{item?.name}</h4>
+              <h4>{item.card.info?.name}</h4>
 
-              <p>₹{item?.price / 100}</p>
-              <span className="item-desc">{item?.description}</span>
+              <p>₹{item.card.info?.price / 100}</p>
+              <span className="item-desc">{item.card.info?.description}</span>
             </div>
             <div className="item-img">
-              {!item?.cloudinaryImageId ? null : (
-                <img src={IMG_CDN_URL + item?.cloudinaryImageId} />
+              {!item.card.info?.imageId ? null : (
+                <img src={IMG_CDN_URL + item.card.info?.imageId} />
               )}
             </div>
           </div>
