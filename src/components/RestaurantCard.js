@@ -10,9 +10,9 @@ const RestaurantCards = ({
   costForTwoString,
 }) => {
   let ratingType;
-  if (avgRating > 4.0) {
+  if (avgRating >= 4.0) {
     ratingType = "green";
-  } else if (avgRating < 4 && avgRating > 3.0) {
+  } else if (avgRating < 4.0 && avgRating > 3.0) {
     ratingType = "yellow";
   } else {
     ratingType = "red";
