@@ -288,10 +288,30 @@
 }
 .item-img {
   width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .item-img img {
   width: 100%;
   border-radius: 10px;
+}
+
+.add-food-item {
+  border: none;
+  outline: none;
+  background: forestgreen;
+  color: white;
+  padding: 8px 10px;
+  width: 60%;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.add-food-item:hover {
+  background: rgb(27, 109, 27);
 }
 
 .footer {
@@ -357,4 +377,12 @@
 .error-button a {
   text-decoration: none;
   color: white;
+}
+
+.cart-count {
+  right: 45px;
+  position: absolute;
+  top: 33px;
+  font-weight: 700;
+  color: lightseagreen;
 }

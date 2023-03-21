@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const loggedInUser = () => {
   //API Call
@@ -18,6 +19,7 @@ const Title = () => {
 };
 
 const Header = () => {
+  const cartItems = useSelector((store) => store.cart.items);
   return (
     <div className="header">
       <div className="header-items">
@@ -37,6 +39,7 @@ const Header = () => {
 
               <Link>
                 <i className="fa fa-shopping-cart"></i>
+                <span className="cart-count">{cartItems.length}</span>
               </Link>
             </ul>
           </div>

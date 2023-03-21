@@ -43,6 +43,7 @@ const RestaurantMenu = () => {
             {!item.card.info?.imageId ? null : (
               <img src={IMG_CDN_URL + item.card.info?.imageId} />
             )}
+            <button className="add-food-item">Add</button>
           </div>
         </div>
       ))}
