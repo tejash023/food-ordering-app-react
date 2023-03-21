@@ -105,6 +105,7 @@
   flex-direction: column;
   justify-content: space-around;
   gap: 0.5rem;
+  background-color: linen;
 }
 
 .card:hover {
@@ -121,7 +122,7 @@
 
 .resName {
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: 500;
   color: rgb(44, 44, 44);
   margin-bottom: 6px;
 }
