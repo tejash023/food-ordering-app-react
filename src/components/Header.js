@@ -20,6 +20,7 @@ const Title = () => {
 
 const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
+
   return (
     <div className="header">
       <div className="header-items">
@@ -37,7 +38,7 @@ const Header = () => {
                 <li>Contact</li>
               </Link>
 
-              <Link>
+              <Link to="/cart" className="cart-logo">
                 <i className="fa fa-shopping-cart"></i>
                 <span className="cart-count">{cartItems.length}</span>
               </Link>

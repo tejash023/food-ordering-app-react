@@ -379,10 +379,13 @@
   color: white;
 }
 
+.cart-logo {
+  position: relative;
+}
 .cart-count {
-  right: 45px;
+  left: 35px;
   position: absolute;
-  top: 33px;
+  top: 3px;
   font-weight: 700;
   color: lightseagreen;
 }
