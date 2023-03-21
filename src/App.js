@@ -10,17 +10,19 @@ import Error from "./components/Error";
 import Contact from "./components/Contact";
 import { ShimmerBlock } from "./components/Shimmer";
 import RestaurantDetails from "./components/RestaurantDetails";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
 //lazy load about component
 const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
   return (
-    <>
+    <Provider store={store}>
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </Provider>
   );
 };
 
