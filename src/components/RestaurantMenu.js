@@ -1,72 +1,52 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { IMG_CDN_URL } from "../constants";
-import { ShimmerBlock } from "../components/Shimmer";
 import useRestaurantDetails from "../utils/useRestaurantDetails";
+import { ShimmerBlock } from "./Shimmer";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
+  const { restaurantMenu } = useRestaurantDetails(resId);
+  const recommendedMenu = restaurantMenu?.cards[2]?.card?.card?.itemCards;
 
-  const restaurant = useRestaurantDetails(resId);
-
-  return !restaurant ? (
+  return !recommendedMenu ? (
     <ShimmerBlock />
   ) : (
-    <div className="restaurant-details">
-      <div className="restaurant-info">
-        <div className="restaurant-name">
-          <h2>{restaurant?.name}</h2>
-          <p>{restaurant?.cuisines?.join(", ")}</p>
-          <p>
-            {restaurant?.area}, {restaurant?.city}
-          </p>
-        </div>
-        <div className="restaurant-basics">
-          <h4>
-            <i class="fa fa-star"></i> {restaurant?.avgRating}{" "}
-          </h4>
-
-          <p>{restaurant.totalRatingsString}</p>
-        </div>
-      </div>
-
-      <div className="restaurant-menu">
-        <p>Total ({Object.values(restaurant?.menu?.items).length})</p>
-        {Object.values(restaurant?.menu?.items).map((item) => (
-          <div className="menu-items" key={item?.id}>
-            <div className="item-details">
-              <div className="item-extras">
-                {/* Check for veg/non veg */}
-                {item?.isVeg === 0 ? (
-                  <span className="nonveg">
-                    <i class="fa fa-circle"></i>
-                  </span>
-                ) : (
-                  <span className="veg">
-                    <i class="fa fa-circle"></i>
-                  </span>
-                )}
-                {/* Check for Bestsellers */}
-                {item?.isBestSeller && (
-                  <span className="bestseller">
-                    <i class="fa fa-star"></i> Bestseller
-                  </span>
-                )}
-              </div>
-
-              <h4>{item?.name}</h4>
-
-              <p>₹{item?.price / 100}</p>
-              <span className="item-desc">{item?.description}</span>
-            </div>
-            <div className="item-img">
-              {!item?.cloudinaryImageId ? null : (
-                <img src={IMG_CDN_URL + item?.cloudinaryImageId} />
+    <div className="restaurant-menu">
+      <p>Total ({Object.values(recommendedMenu).length})</p>
+      {Object.values(recommendedMenu).map((item) => (
+        <div className="menu-items" key={item.card.info?.id}>
+          <div className="item-details">
+            <div className="item-extras">
+              {/* Check for veg/non veg */}
+              {item.card.info?.itemAttribute.vegClassifier === "NONVEG" ? (
+                <span className="nonveg">
+                  <i className="fa fa-circle"></i>
+                </span>
+              ) : (
+                <span className="veg">
+                  <i className="fa fa-circle"></i>
+                </span>
               )}
+              {/* Check for Bestsellers */}
+
+              <span className="bestseller">
+                {item.card.info?.ratings?.aggregatedRating?.rating}
+              </span>
             </div>
+
+            <h4>{item.card.info?.name}</h4>
+
+            <p>₹{item.card.info?.price / 100}</p>
+            <span className="item-desc">{item.card.info?.description}</span>
           </div>
-        ))}
-      </div>
+          <div className="item-img">
+            {!item.card.info?.imageId ? null : (
+              <img src={IMG_CDN_URL + item.card.info?.imageId} />
+            )}
+            <button className="add-food-item">Add</button>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

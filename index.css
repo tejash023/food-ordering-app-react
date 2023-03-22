@@ -66,21 +66,31 @@
 }
 
 .search-container > input {
-  font-size: 1rem;
-  padding: 6px 10px;
-  border: 0.5px solid orangered;
-  outline: none;
+  border: 1.5px solid #000000;
   border-radius: 5px;
+  outline: none;
+  padding: 5px 14px;
+  font-size: 0.9rem;
+  width: 30%;
 }
+
+.search-container > input:focus {
+  border: 2px solid green;
+}
+
 .search-container > button {
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding: 6px 10px;
   border: none;
   outline: none;
   color: white;
-  background-color: orangered;
+  background-color: #000000;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.search-container > button:hover {
+  background-color: #2e2e2e;
 }
 
 .card {
@@ -95,6 +105,7 @@
   flex-direction: column;
   justify-content: space-around;
   gap: 0.5rem;
+  background-color: linen;
 }
 
 .card:hover {
@@ -111,7 +122,7 @@
 
 .resName {
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: 500;
   color: rgb(44, 44, 44);
   margin-bottom: 6px;
 }
@@ -277,14 +288,39 @@
 }
 .item-img {
   width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .item-img img {
   width: 100%;
   border-radius: 10px;
 }
 
+.add-food-item {
+  border: none;
+  outline: none;
+  background: forestgreen;
+  color: white;
+  padding: 8px 10px;
+  width: 60%;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.add-food-item:hover {
+  background: rgb(27, 109, 27);
+}
+
 .footer {
-  background-color: black;
+  background-image: linear-gradient(
+    131deg,
+    #1c1463 0%,
+    #332d8e 46%,
+    #040313 100%
+  );
   height: auto;
   color: white;
   display: flex;
@@ -307,6 +343,28 @@
   color: white;
 }
 
+.error-container {
+  background-image: linear-gradient(
+    131deg,
+    #4f41d0 0%,
+    #332d8e 46%,
+    #0b0840 100%
+  );
+}
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 1rem;
+  color: wheat;
+}
+
+.error-img {
+  height: 160px;
+}
+
 .error-button {
   background-color: black;
   margin: 10px 0;
@@ -319,4 +377,12 @@
 .error-button a {
   text-decoration: none;
   color: white;
+}
+
+.cart-count {
+  right: 45px;
+  position: absolute;
+  top: 33px;
+  font-weight: 700;
+  color: lightseagreen;
 }
