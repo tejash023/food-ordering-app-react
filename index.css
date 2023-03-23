@@ -389,3 +389,18 @@
   font-weight: 700;
   color: lightseagreen;
 }
+
+.cart-items-container {
+  flex-direction: column;
+  display: flex;
+  gap: 1rem;
+  background: gainsboro;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.cart-items-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
