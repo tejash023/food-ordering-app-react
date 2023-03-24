@@ -96,7 +96,7 @@
 .card {
   width: 240px;
   height: 255px;
-  border: 1px solid rgba(227, 227, 227, 0.489);
+  border: 1px solid #c9c9c97d;
   padding: 10px;
   margin: 10px;
   font-size: 0.75rem;
@@ -105,7 +105,7 @@
   flex-direction: column;
   justify-content: space-around;
   gap: 0.5rem;
-  background-color: linen;
+  background-color: rgb(244, 244, 244);
 }
 
 .card:hover {
@@ -170,6 +170,9 @@
   color: rgb(66, 66, 66);
 }
 
+.shimmer {
+  min-height: 75vh;
+}
 .shimmer-cards {
   width: 240px;
   height: 250px;
@@ -197,6 +200,7 @@
   opacity: 0.7;
   animation: loading-animation 1s linear infinite alternate;
 }
+
 @keyframes loading-animation {
   0% {
     background: hsl(200, 20%, 70%);
@@ -219,10 +223,7 @@
 }
 
 .shimmer-lines {
-  height: 30px;
-  background-color: lightgrey;
-  margin: 5% 6%;
-  border-radius: 10px;
+  margin: 5% 2%;
 }
 
 .restaurant-details {

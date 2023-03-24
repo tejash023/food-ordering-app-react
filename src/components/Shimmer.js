@@ -19,13 +19,33 @@ export const ShimmerCards = () => {
   );
 };
 
+export const ShimmerBlock = () => {
+  return (
+    <div className="shimmer">
+      <div className="shimmer-lines">
+        {Array(3)
+          .fill("")
+          .map((e, index) => (
+            <div className="shimmer-cards-line loading-animation"></div>
+          ))}
+      </div>
+    </div>
+  );
+};
+
 export const ShimmerLines = () => {
   return (
     <div className="shimmer">
-      {Array(7)
+      {Array(5)
         .fill("")
         .map((e, index) => (
-          <div key={index} className="shimmer-lines"></div>
+          <div key={index} className="shimmer-lines">
+            {Array(4)
+              .fill("")
+              .map((e, index) => (
+                <div className="shimmer-cards-line loading-animation"></div>
+              ))}
+          </div>
         ))}
     </div>
   );
