@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../constants";
-import { addItem } from "../utils/cartSlice";
+import { addItem, removeItem } from "../utils/cartSlice";
 import useRestaurantDetails from "../utils/useRestaurantDetails";
 import { ShimmerBlock } from "./Shimmer";
 
@@ -14,7 +15,15 @@ const RestaurantMenu = () => {
 
   const handleAddItem = (item) => {
     dispatch(addItem(item));
+    setAddedToCart(true);
   };
+
+  const handleRemoveItem = (item) => {
+    dispatch(removeItem(item));
+    setAddedToCart(false);
+  };
+
+  const [addedToCart, setAddedToCart] = useState(false);
 
   return !recommendedMenu ? (
     <ShimmerBlock />

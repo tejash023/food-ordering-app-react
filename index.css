@@ -395,12 +395,21 @@
   display: flex;
   gap: 1rem;
   background: gainsboro;
-  padding: 10px;
   border-radius: 10px;
+  padding: 3% 5%;
 }
 
 .cart-items-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.total-bill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1.5px solid #bebdbd;
+  margin-top: 10px;
+  padding-top: 21px;
 }

@@ -7,8 +7,11 @@ const Cart = () => {
   return (
     <div className="container">
       <h2>Cart Items</h2>
-      <p>Items in Cart {cartItems.length}</p>
-      <CartItems cartItems={cartItems} />
+      {cartItems.length > 0 ? (
+        <CartItems cartItems={cartItems} />
+      ) : (
+        <p>Nothing here! Try adding some delicious meals from out menu</p>
+      )}
     </div>
   );
 };
