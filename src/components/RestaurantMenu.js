@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../constants";
 import { addItem, removeItem } from "../utils/cartSlice";
 import useRestaurantDetails from "../utils/useRestaurantDetails";
-import { ShimmerBlock } from "./Shimmer";
+import { ShimmerLines } from "./Shimmer";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -26,7 +26,7 @@ const RestaurantMenu = () => {
   const [addedToCart, setAddedToCart] = useState(false);
 
   return !recommendedMenu ? (
-    <ShimmerBlock />
+    <ShimmerLines />
   ) : (
     <div className="restaurant-menu">
       <p>Total ({Object.values(recommendedMenu).length})</p>

@@ -4,17 +4,25 @@ export const ShimmerCards = () => {
       {Array(10)
         .fill("")
         .map((e, index) => (
-          <div key={index} className="shimmer-cards"></div>
+          <div key={index} className="shimmer-cards">
+            <div className="shimmer-cards-img loading-animation"></div>
+            <div className="shimmer-cards-lines ">
+              {Array(4)
+                .fill("")
+                .map((e, index) => (
+                  <div className="shimmer-cards-line loading-animation"></div>
+                ))}
+            </div>
+          </div>
         ))}
     </div>
   );
 };
 
-export const ShimmerBlock = () => {
+export const ShimmerLines = () => {
   return (
     <div className="shimmer">
-      <div className="shimmer-block"></div>
-      {Array(5)
+      {Array(7)
         .fill("")
         .map((e, index) => (
           <div key={index} className="shimmer-lines"></div>
