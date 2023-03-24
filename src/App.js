@@ -4,7 +4,12 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  ScrollRestoration,
+} from "react-router-dom";
 
 import Error from "./components/Error";
 import Contact from "./components/Contact";
@@ -20,6 +25,7 @@ const About = lazy(() => import("./components/About"));
 const AppLayout = () => {
   return (
     <Provider store={store}>
+      <ScrollRestoration />
       <Header />
       <Outlet />
       <Footer />
