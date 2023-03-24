@@ -40,7 +40,9 @@ const Header = () => {
 
               <Link to="/cart" className="cart-logo">
                 <i className="fa fa-shopping-cart"></i>
-                <span className="cart-count">{cartItems.length}</span>
+                <span className="cart-count">
+                  {cartItems.length ? cartItems.length : 0}
+                </span>
               </Link>
             </ul>
           </div>

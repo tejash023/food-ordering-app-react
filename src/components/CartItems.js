@@ -1,4 +1,6 @@
+import { useDispatch } from "react-redux";
 import { IMG_CDN_URL } from "../constants";
+import { removeItem } from "../utils/cartSlice";
 
 const CartItems = ({ cartItems }) => {
   const getCartTotal = () => {
@@ -6,8 +8,14 @@ const CartItems = ({ cartItems }) => {
     cartItems.map((item) => {
       totalPrice += item.price;
     });
-    console.log(totalPrice);
+
     return totalPrice / 100;
+  };
+
+  const dispatch = useDispatch();
+
+  const handleRemoveItem = (item) => {
+    dispatch(removeItem(item));
   };
 
   return (
@@ -16,7 +24,15 @@ const CartItems = ({ cartItems }) => {
         <div key={item.id} className="cart-items-item">
           <p>{item.name}</p>
 
-          <p>₹ {item.price / 100}</p>
+          <div className="cart-item-actions">
+            <p>₹ {item.price / 100}</p>
+            <button
+              className="remove-cart-items"
+              onClick={() => handleRemoveItem(item)}
+            >
+              <i className="fa fa-close"></i>
+            </button>
+          </div>
         </div>
       ))}
 
