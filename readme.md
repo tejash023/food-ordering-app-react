@@ -6,7 +6,8 @@
 
 ## Features
 
-- User can navigate to each restaurant card based on the availability of location -[V2] User will be able to select his/her own location from the search input - anywhere in India
+- User can navigate to each restaurant card based on the availability of location.location.  
+   -[V2] User will be able to select his/her own location from the search input - anywhere in India
 - User can add food items to cart
   - [V2] Only able to add food items for one restaurant at a time
 - Cart will display all the items added to cart
