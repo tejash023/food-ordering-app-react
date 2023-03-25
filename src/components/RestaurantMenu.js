@@ -7,6 +7,8 @@ import useRestaurantDetails from "../utils/useRestaurantDetails";
 import ItemQuantity from "./ItemQuantity";
 import { ShimmerLines } from "./Shimmer";
 
+import { BsStopCircle } from "react-icons/fa";
+
 const RestaurantMenu = ({ menuItems }) => {
   // console.log("item", item);
   // const { id, name, description, price, imageId } = item;
@@ -22,10 +24,10 @@ const RestaurantMenu = ({ menuItems }) => {
   //console.log(menuItems);
   Object.values(
     menuItems.map((item) => {
-      console.log(item.card.info);
+      console.log(item.card.info.ribbon);
     })
   );
-  const recommendedMenu = null;
+
   return !menuItems ? (
     <ShimmerLines />
   ) : (
@@ -45,10 +47,15 @@ const RestaurantMenu = ({ menuItems }) => {
                 </span>
               )}
               {/* Check for Bestsellers */}
+              {item?.card?.info?.ribbon?.text === "Bestseller" && (
+                <span className="bestseller">
+                  <i className="fa fa-star"></i> Bestseller
+                </span>
+              )}
 
-              <span className="bestseller">
+              {/* <span className="bestseller">
                 {item.card.info?.ratings?.aggregatedRating?.rating}
-              </span>
+              </span> */}
             </div>
 
             <h4>{item.card.info?.name}</h4>
