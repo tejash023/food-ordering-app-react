@@ -1,4 +1,26 @@
+import { useState } from "react";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FAQs } from "../constants";
+
+const FAQ = ({ id, title, description, isVisible, setIsVisible }) => {
+  return (
+    <div className="faq-section">
+      <div className="faq-title">
+        <p>{title}</p>
+        {isVisible ? (
+          <FaChevronUp onClick={() => setIsVisible(false)} />
+        ) : (
+          <FaChevronDown onClick={() => setIsVisible(true)} />
+        )}
+      </div>
+
+      <div className="faq-content">{isVisible && <p>{description}</p>}</div>
+    </div>
+  );
+};
+
 const About = () => {
+  const [visibleSection, setVisibleSection] = useState("");
   return (
     <div className="container">
       <h2>About us page</h2>
@@ -15,6 +37,25 @@ const About = () => {
         app. With Go Foods, there's no need to go out to eat; they can bring the
         restaurant to you.
       </p>
+      <div className="FAQ">
+        <h3 className="mtop10">Frequently Asked Questions</h3>
+        {FAQs.map((FAQContent) => (
+          <FAQ
+            key={FAQContent.id}
+            id={FAQContent.id}
+            title={FAQContent.title}
+            description={FAQContent.description}
+            isVisible={visibleSection === FAQContent.id}
+            setIsVisible={(display) => {
+              if (display) {
+                setVisibleSection(FAQContent.id);
+              } else {
+                setVisibleSection(" ");
+              }
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 };
