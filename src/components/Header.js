@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import PlacesAutocomplete from "./PlacesAutocomplete";
 
 const loggedInUser = () => {
   //API Call

@@ -10,7 +10,10 @@ export const ShimmerCards = () => {
               {Array(4)
                 .fill("")
                 .map((e, index) => (
-                  <div className="shimmer-cards-line loading-animation"></div>
+                  <div
+                    key={index}
+                    className="shimmer-cards-line loading-animation"
+                  ></div>
                 ))}
             </div>
           </div>
@@ -26,7 +29,10 @@ export const ShimmerBlock = () => {
         {Array(3)
           .fill("")
           .map((e, index) => (
-            <div className="shimmer-cards-line loading-animation"></div>
+            <div
+              key={index}
+              className="shimmer-cards-line loading-animation"
+            ></div>
           ))}
       </div>
     </div>
@@ -43,7 +49,10 @@ export const ShimmerLines = () => {
             {Array(4)
               .fill("")
               .map((e, index) => (
-                <div className="shimmer-cards-line loading-animation"></div>
+                <div
+                  key={index}
+                  className="shimmer-cards-line loading-animation"
+                ></div>
               ))}
           </div>
         ))}

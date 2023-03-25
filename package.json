@@ -11,6 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.21.0",
+    "@types/google.maps": "^3.52.3",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "parcel": "^2.8.3",
     "process": "^0.11.10"
@@ -18,9 +19,11 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
     "react": "^18.2.0",
+    "react-cool-onclickoutside": "^1.7.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
-    "react-router-dom": "^6.9.0"
+    "react-router-dom": "^6.9.0",
+    "use-places-autocomplete": "^4.0.0"
   },
   "browsersList": [
     "last 2 versions"

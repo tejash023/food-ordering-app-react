@@ -1,9 +1,11 @@
 const { configureStore } = require("@reduxjs/toolkit");
 import cartSlice from "./cartSlice";
+import locationSlice from "./locationSlice";
 
 const store = configureStore({
   reducer: {
     cart: cartSlice,
+    location: locationSlice,
   },
 });
 

@@ -23,11 +23,6 @@ const Body = () => {
     setFilteredRestaurants(json.data?.cards[2]?.data?.data?.cards);
   }
 
-  /*
-   ** Conditonal Rendering
-   ** If restaurant is empty => shimmer UI
-   ** If restaurant has data => actual UI Data */
-
   // not render component (Early return)
   if (!allRestaurants) return null;
 
