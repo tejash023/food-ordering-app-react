@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { BsHandbagFill, BsHandbag } from "react-icons/bs";
 import PlacesAutocomplete from "./PlacesAutocomplete";
 
 const loggedInUser = () => {
@@ -40,7 +41,11 @@ const Header = () => {
               </Link>
 
               <Link to="/cart" className="cart-logo">
-                <i className="fa fa-shopping-cart"></i>
+                {cartItems.length > 0 ? (
+                  <BsHandbagFill size="2.2rem" />
+                ) : (
+                  <BsHandbag size="2.2rem" />
+                )}
                 <span className="cart-count">
                   {cartItems.length ? cartItems.length : 0}
                 </span>

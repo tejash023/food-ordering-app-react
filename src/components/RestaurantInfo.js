@@ -1,13 +1,21 @@
+import { FaLeaf } from "react-icons/fa";
+
 const RestaurantInfo = ({ restaurant }) => {
+  console.log(restaurant);
   return (
     <div className="restaurant-info">
       <div className="restaurant-name">
-        <h2>{restaurant?.name}</h2>
+        <h2 className="heading-text">{restaurant?.name}</h2>
 
         <p>{restaurant?.cuisines?.join(", ")}</p>
         <p>
-          {restaurant?.areaName}, {restaurant?.info?.city}
+          {restaurant?.areaName}, {restaurant?.city}
         </p>
+        {restaurant?.veg && (
+          <p className="mtop10">
+            <FaLeaf color="green" /> Pure Veg
+          </p>
+        )}
       </div>
       <div className="restaurant-basics">
         <h4>

@@ -7,7 +7,7 @@ import useRestaurantDetails from "../utils/useRestaurantDetails";
 import ItemQuantity from "./ItemQuantity";
 import { ShimmerLines } from "./Shimmer";
 
-import { BsStopCircle } from "react-icons/fa";
+import { FaRegStopCircle, FaRegCaretSquareUp } from "react-icons/fa";
 
 const RestaurantMenu = ({ menuItems }) => {
   // console.log("item", item);
@@ -22,11 +22,11 @@ const RestaurantMenu = ({ menuItems }) => {
   // const [addedToCart, setAddedToCart] = useState(false);
 
   //console.log(menuItems);
-  Object.values(
-    menuItems.map((item) => {
-      console.log(item.card.info.ribbon);
-    })
-  );
+  // Object.values(
+  //   menuItems.map((item) => {
+  //     console.log(item.card.info.ribbon);
+  //   })
+  // );
 
   return !menuItems ? (
     <ShimmerLines />
@@ -38,13 +38,9 @@ const RestaurantMenu = ({ menuItems }) => {
             <div className="item-extras">
               {/* Check for veg/non veg */}
               {item.card.info?.itemAttribute?.vegClassifier === "NONVEG" ? (
-                <span className="nonveg">
-                  <i className="fa fa-circle"></i>
-                </span>
+                <FaRegCaretSquareUp className="nonveg" size="1.25rem" />
               ) : (
-                <span className="veg">
-                  <i className="fa fa-circle"></i>
-                </span>
+                <FaRegStopCircle className="veg" size="1.25rem" />
               )}
               {/* Check for Bestsellers */}
               {item?.card?.info?.ribbon?.text === "Bestseller" && (

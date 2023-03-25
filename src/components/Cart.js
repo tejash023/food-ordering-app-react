@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CartItems from "./CartItems";
+import cartImage from "../assets/svg/empty.svg";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
@@ -8,11 +9,16 @@ const Cart = () => {
 
   return (
     <div className="container cart-container">
-      <h2>Cart Items</h2>
+      <h2 className="heading-text">Cart Items</h2>
       {cartItems.length > 0 ? (
         <CartItems cartItems={cartItems} />
       ) : (
-        <p>Nothing here! Try adding some delicious meals from our menu!</p>
+        <div className="empty-cart">
+          <p className="paragraph">
+            Nothing here! Try adding some delicious meals from our menu!
+          </p>
+          <img className="display-img-bg" src={cartImage} alt="cart" />
+        </div>
       )}
 
       {cartItems.length > 0 && <Link className="place-order">Place Order</Link>}

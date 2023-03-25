@@ -2,8 +2,6 @@ import RestaurantNestedItemCategory from "./RestaurantCategory/RestaurantNestedI
 import RestaurantItemCategory from "./RestaurantCategory/RestaurantItemCategory";
 
 const RestaurantCategory = ({ menu }) => {
-  console.log(menu);
-
   return (
     <div className="menu">
       {menu.map((item, index) => (

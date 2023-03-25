@@ -7,7 +7,7 @@ const RestaurantItemCategory = ({ itemCategory }) => {
   return (
     <div className="item-category">
       <div className="item-category-header">
-        <p>{itemCategory.title}</p>
+        <p className="subheading-text">{itemCategory.title}</p>
 
         {isVisible ? (
           <FaChevronUp onClick={() => setIsVisible(false)} />

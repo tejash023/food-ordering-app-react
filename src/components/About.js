@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { FAQs } from "../constants";
+import about from "../assets/svg/about.svg";
 
 const FAQ = ({ id, title, description, isVisible, setIsVisible }) => {
   return (
-    <div className="faq-section">
-      <div className="faq-title">
+    <div className="faq-section mtop20">
+      <div className="faq-title mtop20">
         <p>{title}</p>
         {isVisible ? (
           <FaChevronUp onClick={() => setIsVisible(false)} />
@@ -23,9 +24,12 @@ const About = () => {
   const [visibleSection, setVisibleSection] = useState("");
   return (
     <div className="container">
-      <h2>About us page</h2>
-      <h3>Get your food delivery without the hassle!</h3>
-      <p>
+      <h2 className="heading-text">About Us!</h2>
+      <img className="display-img-md mbottom10" src={about} />
+      <h3 className="subheading-text">
+        Get your food delivery without the hassle!
+      </h3>
+      <p className="paragraph">
         Go Foods was founded with a simple mission: to make it easier for people
         to get their food delivered. With a food delivery app in India, they
         make it easy for people to order food from their favorite restaurants
@@ -38,7 +42,7 @@ const About = () => {
         restaurant to you.
       </p>
       <div className="FAQ">
-        <h3 className="mtop10">Frequently Asked Questions</h3>
+        <h3 className="subheading-text mtop10">Frequently Asked Questions</h3>
         {FAQs.map((FAQContent) => (
           <FAQ
             key={FAQContent.id}
