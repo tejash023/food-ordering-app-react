@@ -1,9 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 
-import Header from "./components/Header";
-import Body from "./components/Body";
-import Footer from "./components/Footer";
+//Routing
 import {
   createBrowserRouter,
   RouterProvider,
@@ -11,13 +9,19 @@ import {
   ScrollRestoration,
 } from "react-router-dom";
 
+//Redux
+import { Provider } from "react-redux";
+import store from "./utils/store";
+
+//Components
+import Header from "./components/Header";
+import Body from "./components/Body";
+import Footer from "./components/Footer";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import { ShimmerBlock } from "./components/Shimmer";
 import RestaurantDetails from "./components/RestaurantDetails";
-import { Provider } from "react-redux";
-import store from "./utils/store";
 
 //lazy load about component
 const About = lazy(() => import("./components/About"));

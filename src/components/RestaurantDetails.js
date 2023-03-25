@@ -1,36 +1,21 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { IMG_CDN_URL } from "../constants";
 import { ShimmerBlock } from "./Shimmer";
 import useRestaurantDetails from "../utils/useRestaurantDetails";
-import RestaurantMenu from "./RestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
+import RestaurantInfo from "./RestaurantInfo";
 
 const RestaurantDetails = () => {
   const { resId } = useParams();
 
-  const { restaurant } = useRestaurantDetails(resId);
+  const restaurant = useRestaurantDetails(resId);
+  console.log(restaurant);
 
   return !restaurant ? (
     <ShimmerBlock />
   ) : (
     <div className="restaurant-details">
-      <div className="restaurant-info">
-        <div className="restaurant-name">
-          <h2>{restaurant?.name}</h2>
-          <p>{restaurant?.cuisines?.join(", ")}</p>
-          <p>
-            {restaurant?.areaName}, {restaurant?.city}
-          </p>
-        </div>
-        <div className="restaurant-basics">
-          <h4>
-            <i className="fa fa-star"></i> {restaurant?.avgRating}{" "}
-          </h4>
-          <p>{restaurant.totalRatingsString}</p>
-        </div>
-      </div>
-
-      <RestaurantMenu />
+      <RestaurantInfo restaurant={restaurant?.info} />
+      <RestaurantCategory menu={restaurant?.menu} />
     </div>
   );
 };

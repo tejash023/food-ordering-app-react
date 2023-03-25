@@ -1,7 +1,7 @@
 export const ShimmerCards = () => {
   return (
     <div className="restaurant-lists">
-      {Array(10)
+      {Array(8)
         .fill("")
         .map((e, index) => (
           <div key={index} className="shimmer-cards">

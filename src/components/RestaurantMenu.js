@@ -4,38 +4,38 @@ import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../constants";
 import { addItem, removeItem } from "../utils/cartSlice";
 import useRestaurantDetails from "../utils/useRestaurantDetails";
+import ItemQuantity from "./ItemQuantity";
 import { ShimmerLines } from "./Shimmer";
 
-const RestaurantMenu = () => {
-  const { resId } = useParams();
-  const { restaurantMenu } = useRestaurantDetails(resId);
-  const recommendedMenu = restaurantMenu?.cards[2]?.card?.card?.itemCards;
+const RestaurantMenu = ({ menuItems }) => {
+  // console.log("item", item);
+  // const { id, name, description, price, imageId } = item;
+  // console.log(id, name, description, price, imageId);
+  // const { resId } = useParams();
+  // const restaurant = useRestaurantDetails(resId);
 
-  const dispatch = useDispatch();
+  // console.log("Menu", restaurantMenu);
+  //const recommendedMenu = restaurant?.cards[2]?.card?.card?.itemCards;
 
-  const handleAddItem = (item) => {
-    dispatch(addItem(item));
-    setAddedToCart(true);
-  };
+  // const [addedToCart, setAddedToCart] = useState(false);
 
-  const handleRemoveItem = (item) => {
-    dispatch(removeItem(item));
-    setAddedToCart(false);
-  };
-
-  const [addedToCart, setAddedToCart] = useState(false);
-
-  return !recommendedMenu ? (
+  //console.log(menuItems);
+  Object.values(
+    menuItems.map((item) => {
+      console.log(item.card.info);
+    })
+  );
+  const recommendedMenu = null;
+  return !menuItems ? (
     <ShimmerLines />
   ) : (
     <div className="restaurant-menu">
-      <p>Total ({Object.values(recommendedMenu).length})</p>
-      {Object.values(recommendedMenu).map((item) => (
+      {Object.values(menuItems).map((item) => (
         <div className="menu-items" key={item.card.info?.id}>
           <div className="item-details">
             <div className="item-extras">
               {/* Check for veg/non veg */}
-              {item.card.info?.itemAttribute.vegClassifier === "NONVEG" ? (
+              {item.card.info?.itemAttribute?.vegClassifier === "NONVEG" ? (
                 <span className="nonveg">
                   <i className="fa fa-circle"></i>
                 </span>
@@ -60,12 +60,12 @@ const RestaurantMenu = () => {
             {!item.card.info?.imageId ? null : (
               <img src={IMG_CDN_URL + item.card.info?.imageId} />
             )}
-            <button
+            {/* <button
               className="add-food-item"
               onClick={() => handleAddItem(item.card.info)}
             >
               Add
-            </button>
+            </button> */}
           </div>
         </div>
       ))}

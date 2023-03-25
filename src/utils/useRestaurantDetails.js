@@ -14,16 +14,32 @@ const useRestaurantDetails = (resId) => {
   const getRestaurantDetails = async () => {
     const response = await fetch(FETCH_MENU_URL + resId);
     const json = await response.json();
-    const restaurant = json.data.cards[0]?.card?.card?.info;
 
-    const restaurantMenu =
-      json.data.cards[2]?.groupedCard?.cardGroupMap?.REGULAR;
-    setRestaurant(restaurant);
-    setRestaurantMenu(restaurantMenu);
+    const menuItemsList =
+      json.data.cards[2]["groupedCard"].cardGroupMap.REGULAR.cards;
+    const itemCategory =
+      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
+    const NestedItemCategory =
+      "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory";
+
+    const menu = menuItemsList.map((item) => {
+      if (
+        item.card.card["@type"] === itemCategory ||
+        item.card.card["@type"] === NestedItemCategory
+      ) {
+        return item.card.card;
+      }
+    });
+
+    const modifiedData = {
+      info: json.data.cards[0].card.card.info,
+      menu: menu.filter((value) => value !== undefined),
+    };
+
+    setRestaurant(modifiedData);
   };
 
-  //return restaurant Data
-  return { restaurant, restaurantMenu };
+  return restaurant;
 };
 
 export default useRestaurantDetails;

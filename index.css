@@ -495,3 +495,9 @@
   color: #fff;
   text-decoration: none;
 }
+
+.item-category > p {
+  font-size: 1.15rem;
+  margin: 20px 0;
+  font-weight: 600;
+}
