@@ -48,10 +48,6 @@ const RestaurantMenu = ({ menuItems }) => {
                   <i className="fa fa-star"></i> Bestseller
                 </span>
               )}
-
-              {/* <span className="bestseller">
-                {item.card.info?.ratings?.aggregatedRating?.rating}
-              </span> */}
             </div>
 
             <h4>{item.card.info?.name}</h4>
