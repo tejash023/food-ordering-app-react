@@ -21,7 +21,7 @@ import Error from "./components/Error";
 import Cart from "./components/Cart";
 import { ShimmerBlock } from "./components/Shimmer";
 import RestaurantDetails from "./components/RestaurantDetails";
-import Checkout from "./components/checkout";
+import Checkout from "./components/Checkout";
 
 //lazy load about component
 const About = lazy(() => import("./components/About"));
