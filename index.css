@@ -502,6 +502,17 @@
   font-weight: 600;
 }
 
+.item-category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.section-border {
+  height: 16px;
+  border-bottom: 16px solid #f1f1f6;
+}
+
 .faq-section {
   margin: 10px 6%;
 }
