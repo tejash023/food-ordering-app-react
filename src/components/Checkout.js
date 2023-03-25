@@ -1,6 +1,6 @@
 const Checkout = () => {
   return (
-    <div>
+    <div className="container checkout">
       <p className="heading-text">Checkout</p>
       <div className="address">
         <p className="subheading-text">Select your address</p>
