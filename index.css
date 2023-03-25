@@ -258,11 +258,11 @@
 }
 
 .shimmer-lines {
-  margin: 5% 2%;
+  margin: 5% 7%;
 }
 
 .restaurant-details {
-  margin: 5% 10%;
+  margin: 5% 14%;
 }
 
 .restaurant-info {
@@ -328,6 +328,8 @@
 
 .item-extras {
   margin-top: 10px;
+  display: flex;
+  align-items: center;
 }
 .item-desc {
   font-size: 14px;
@@ -338,8 +340,8 @@
 
 .bestseller {
   color: #ee9c00;
-  font-weight: 600;
-  font-size: 13px;
+  font-weight: 500;
+  font-size: 14px;
 }
 .nonveg {
   color: red;
@@ -569,4 +571,32 @@
   color: #727272;
   padding: 10px 0;
   font-size: 0.9rem;
+}
+
+.item-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  border: 1.5px solid forestgreen;
+  padding: 0 13px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.item-quantity button {
+  border: none;
+  outline: none;
+  color: darkgrey;
+  background: transparent;
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+}
+
+.item-quantity p {
+  padding: 0;
+  margin: 0;
+  color: rgb(2, 2, 58);
 }

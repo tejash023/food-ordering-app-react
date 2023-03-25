@@ -1,27 +1,11 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../constants";
-import { addItem, removeItem } from "../utils/cartSlice";
-import useRestaurantDetails from "../utils/useRestaurantDetails";
+
 import ItemQuantity from "./ItemQuantity";
 import { ShimmerLines } from "./Shimmer";
 
 import { FaRegStopCircle, FaRegCaretSquareUp } from "react-icons/fa";
 
 const RestaurantMenu = ({ menuItems }) => {
-  // console.log("item", item);
-  // const { id, name, description, price, imageId } = item;
-  // console.log(id, name, description, price, imageId);
-  // const { resId } = useParams();
-  // const restaurant = useRestaurantDetails(resId);
-
-  // console.log("Menu", restaurantMenu);
-  //const recommendedMenu = restaurant?.cards[2]?.card?.card?.itemCards;
-
-  // const [addedToCart, setAddedToCart] = useState(false);
-
-  //console.log(menuItems);
   // Object.values(
   //   menuItems.map((item) => {
   //     console.log(item.card.info.ribbon);
@@ -59,12 +43,9 @@ const RestaurantMenu = ({ menuItems }) => {
             {!item.card.info?.imageId ? null : (
               <img src={IMG_CDN_URL + item.card.info?.imageId} />
             )}
-            {/* <button
-              className="add-food-item"
-              onClick={() => handleAddItem(item.card.info)}
-            >
-              Add
-            </button> */}
+            <div className="cart-action">
+              <ItemQuantity item={item.card.info} key={item.card.info.id} />
+            </div>
           </div>
         </div>
       ))}

@@ -21,7 +21,7 @@ const Title = () => {
 };
 
 const Header = () => {
-  const cartItems = useSelector((store) => store.cart.items);
+  const cartCount = useSelector((store) => store.cart.totalItemsCount);
 
   return (
     <div className="header">
@@ -41,14 +41,12 @@ const Header = () => {
               </Link>
 
               <Link to="/cart" className="cart-logo">
-                {cartItems.length > 0 ? (
+                {cartCount > 0 ? (
                   <BsHandbagFill size="2.2rem" />
                 ) : (
                   <BsHandbag size="2.2rem" />
                 )}
-                <span className="cart-count">
-                  {cartItems.length ? cartItems.length : 0}
-                </span>
+                <span className="cart-count">{cartCount}</span>
               </Link>
             </ul>
           </div>

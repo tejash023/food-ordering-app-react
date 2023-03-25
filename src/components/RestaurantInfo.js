@@ -1,7 +1,6 @@
 import { FaLeaf } from "react-icons/fa";
 
 const RestaurantInfo = ({ restaurant }) => {
-  console.log(restaurant);
   return (
     <div className="restaurant-info">
       <div className="restaurant-name">
