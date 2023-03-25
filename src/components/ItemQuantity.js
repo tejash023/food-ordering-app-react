@@ -6,7 +6,6 @@ const ItemQuantity = ({ item }) => {
   const itemCountInitial = useSelector(
     (store) => store?.cart?.items[item.id]?.quantity
   );
-  console.log(itemCountInitial);
 
   let [itemCount, setItemCount] = useState(
     !itemCountInitial ? 0 : itemCountInitial

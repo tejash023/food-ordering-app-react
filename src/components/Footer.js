@@ -1,19 +1,27 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import { FiGithub } from "react-icons/fi";
 
 const Footer = () => {
   return (
     <div className="footer">
-      <p>All rights reserved.</p>
+      <p className="paragraph colwhite">Go Foods. </p>
+      <p paragraph colwhite>
+        Developed by Tejash{" "}
+        <a href="https://github.com/tejash023">
+          {" "}
+          <FiGithub color="white" size="1rem" to="/about" />{" "}
+        </a>
+      </p>
       <ul>
-        <Link to="/">
+        <NavLink to="/">
           <li>Home</li>
-        </Link>
-        <Link to="/about">
+        </NavLink>
+        <NavLink to="/about">
           <li>About</li>
-        </Link>
-        <Link to="/contact">
+        </NavLink>
+        <NavLink to="/contact">
           <li>Contact</li>
-        </Link>
+        </NavLink>
       </ul>
     </div>
   );

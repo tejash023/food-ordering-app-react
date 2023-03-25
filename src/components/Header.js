@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { BsHandbagFill, BsHandbag } from "react-icons/bs";
 import PlacesAutocomplete from "./PlacesAutocomplete";
@@ -10,12 +10,13 @@ const loggedInUser = () => {
 
 const Title = () => {
   return (
-    <Link to="/">
+    <Link to="/" className="logo-items">
       <img
         className="logo"
         alt="logo"
         src="https://icon-library.com/images/food-app-icon/food-app-icon-0.jpg"
       />
+      <p className="logo-text colblack">Go Foods.</p>
     </Link>
   );
 };
@@ -30,24 +31,24 @@ const Header = () => {
         <div className="navigation-menu">
           <div className="nav-items">
             <ul>
-              <Link to="/">
+              <NavLink to="/">
                 <li>Home</li>
-              </Link>
-              <Link to="/about">
+              </NavLink>
+              <NavLink to="/about">
                 <li>About</li>
-              </Link>
-              <Link to="/contact">
+              </NavLink>
+              <NavLink to="/contact">
                 <li>Contact</li>
-              </Link>
+              </NavLink>
 
-              <Link to="/cart" className="cart-logo">
+              <NavLink to="/cart" className="cart-logo">
                 {cartCount > 0 ? (
                   <BsHandbagFill size="2.2rem" />
                 ) : (
                   <BsHandbag size="2.2rem" />
                 )}
                 <span className="cart-count">{cartCount}</span>
-              </Link>
+              </NavLink>
             </ul>
           </div>
         </div>

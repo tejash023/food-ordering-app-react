@@ -24,7 +24,11 @@ const Cart = () => {
         </div>
       )}
 
-      {cartItems.length > 0 && <Link className="place-order">Place Order</Link>}
+      {Object.keys(cartItems).length > 0 && (
+        <Link to="/checkout" className="place-order mtop20">
+          Place Order
+        </Link>
+      )}
     </div>
   );
 };
