@@ -18,7 +18,6 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import Error from "./components/Error";
-import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import { ShimmerBlock } from "./components/Shimmer";
 import RestaurantDetails from "./components/RestaurantDetails";
@@ -26,6 +25,7 @@ import Checkout from "./components/checkout";
 
 //lazy load about component
 const About = lazy(() => import("./components/About"));
+const Contact = lazy(() => import("./components/Contact"));
 
 const AppLayout = () => {
   return (
@@ -58,7 +58,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <Contact />,
+        element: (
+          <Suspense fallback={<ShimmerBlock />}>
+            <Contact />
+          </Suspense>
+        ),
       },
       {
         path: "/restaurant/:resId",
