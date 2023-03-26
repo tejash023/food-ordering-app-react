@@ -1,4 +1,5 @@
 import { FaLeaf } from "react-icons/fa";
+import { AiFillStar } from "react-icons/ai";
 
 const RestaurantInfo = ({ restaurant }) => {
   return (
