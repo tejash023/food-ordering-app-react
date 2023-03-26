@@ -5,6 +5,7 @@ import { ShimmerCards } from "./Shimmer";
 import { filterData } from "../utils/helper";
 import { FETCH_RESTAURANTS } from "../constants";
 import useOnline from "../utils/useOnline";
+import Loader from "./Loader";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -26,7 +27,7 @@ const Body = () => {
   }
 
   // not render component (Early return)
-  if (!allRestaurants) return null;
+  if (!allRestaurants) return <Loader />;
 
   //check if user online or offline
   const isOnline = useOnline();

@@ -18,15 +18,16 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import Error from "./components/Error";
-import Cart from "./components/Cart";
-import { ShimmerBlock } from "./components/Shimmer";
+import { ShimmerBlock, ShimmerLines } from "./components/Shimmer";
 import RestaurantDetails from "./components/RestaurantDetails";
-import Checkout from "./components/Checkout";
-import OrderSummary from "./components/OrderSummary";
+import Loader from "./components/Loader";
 
-//lazy load about component
+//lazy loading component
 const About = lazy(() => import("./components/About"));
 const Contact = lazy(() => import("./components/Contact"));
+const Cart = lazy(() => import("./components/Cart"));
+const Checkout = lazy(() => import("./components/Checkout"));
+const OrderSummary = lazy(() => import("./components/OrderSummary"));
 
 const AppLayout = () => {
   return (
@@ -72,15 +73,27 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Cart />,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Cart />
+          </Suspense>
+        ),
       },
       {
         path: "/checkout",
-        element: <Checkout />,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Checkout />
+          </Suspense>
+        ),
       },
       {
         path: "/order-summary",
-        element: <OrderSummary />,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <OrderSummary />
+          </Suspense>
+        ),
       },
     ],
   },
