@@ -19,8 +19,10 @@ const Body = () => {
   async function getRestaurants() {
     const data = await fetch(FETCH_RESTAURANTS);
     const json = await data.json();
-    setAllRestaurants(json.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestaurants(json.data?.cards[2]?.data?.data?.cards);
+    if (json) {
+      setAllRestaurants(json.data?.cards[2]?.data?.data?.cards);
+      setFilteredRestaurants(json.data?.cards[2]?.data?.data?.cards);
+    }
   }
 
   // not render component (Early return)

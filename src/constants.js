@@ -1,5 +1,5 @@
 export const FETCH_RESTAURANTS =
-  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.6039168&lng=85.1360248&page_type=DESKTOP_WEB_LISTING";
+  "https://gofoodsserver.onrender.com/api/restaurants/?lat=25.6039168&lng=85.1360248";
 
 export const IMG_CDN_URL =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
@@ -8,7 +8,7 @@ export const IMG_CDN_URL =
 //   "https://www.swiggy.com/dapi/menu/v4/full?lat=25.8773651&lng=86.5927887&menuId=";
 
 export const FETCH_MENU_URL =
-  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=25.5940947&lng=85.1375645&restaurantId=";
+  "https://gofoodsserver.onrender.com/api/menu/?lat=25.5940947&lng=85.1375645&restaurantId=";
 
 export const FAQs = [
   {
@@ -42,3 +42,8 @@ export const FAQs = [
       "If there is an issue with your order, such as missing items or incorrect order, please contact our customer support immediately. We will investigate the issue and take appropriate action to resolve it. In case of any quality issues with the food, please take pictures and share them with us so that we can take necessary steps to prevent it from happening in the future.",
   },
 ];
+
+//LEGACY
+/**
+ * https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.6039168&lng=85.1360248&page_type=DESKTOP_WEB_LISTING
+ */
