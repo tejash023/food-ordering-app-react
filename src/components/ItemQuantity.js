@@ -22,8 +22,9 @@ const ItemQuantity = ({ item }) => {
       >
         -
       </button>
-      <p>{itemCount}</p>
+      <p className="item-green">{itemCount}</p>
       <button
+        className="item-green"
         onClick={() => {
           dispatch(addItem(item));
           setItemCount(itemCount + 1);

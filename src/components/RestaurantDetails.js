@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { ShimmerBlock } from "./Shimmer";
+import { ShimmerBlock, ShimmerLines } from "./Shimmer";
 import useRestaurantDetails from "../utils/useRestaurantDetails";
 import RestaurantCategory from "./RestaurantCategory";
 import RestaurantInfo from "./RestaurantInfo";
@@ -11,7 +11,7 @@ const RestaurantDetails = () => {
   // console.log(restaurant);
 
   return !restaurant ? (
-    <ShimmerBlock />
+    <ShimmerLines />
   ) : (
     <div className="restaurant-details">
       <RestaurantInfo restaurant={restaurant?.info} />

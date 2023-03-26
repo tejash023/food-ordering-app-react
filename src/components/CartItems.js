@@ -21,8 +21,8 @@ const CartItems = ({ cartItems }) => {
         </div>
       ))}
       <div className="total-bill">
-        <h3 className="heading-text">Total Bill</h3>
-        <h3>₹ {totalAmount}</h3>
+        <h3 className="subheading-text">Total Bill</h3>
+        <h3 className="heading-text">₹ {totalAmount}</h3>
       </div>
     </div>
   );

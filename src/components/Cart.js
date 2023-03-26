@@ -26,7 +26,7 @@ const Cart = () => {
 
       {Object.keys(cartItems).length > 0 && (
         <Link to="/checkout" className="place-order mtop20">
-          Place Order
+          Checkout
         </Link>
       )}
     </div>

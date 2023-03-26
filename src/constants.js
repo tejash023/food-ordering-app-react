@@ -43,6 +43,31 @@ export const FAQs = [
   },
 ];
 
+export const address = [
+  {
+    id: 228,
+    Name: "John",
+    Mobile: "5186047362",
+    Address: "Boring Road, Patna, Bihar 800001",
+    AddressType: "Home",
+  },
+
+  {
+    id: 229,
+    Name: "Hulk",
+    Mobile: "4161071256",
+    Address: "Kankarbagh, Patna, Bihar 800020",
+    AddressType: "Office",
+  },
+  {
+    id: 234,
+    Name: "Steve Rogers",
+    Mobile: "2304802741",
+    Address: "Rajendra Nagar, Patna, Bihar 800016",
+    AddressType: "Others",
+  },
+];
+
 //LEGACY
 /**
  * https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.6039168&lng=85.1360248&page_type=DESKTOP_WEB_LISTING

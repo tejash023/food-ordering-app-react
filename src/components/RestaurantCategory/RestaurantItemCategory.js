@@ -4,10 +4,13 @@ import { useState } from "react";
 
 const RestaurantItemCategory = ({ itemCategory }) => {
   const [isVisible, setIsVisible] = useState(true);
+  console.log(itemCategory.itemCards.length);
   return (
     <div className="item-category">
       <div className="item-category-header">
-        <p className="subheading-text">{itemCategory.title}</p>
+        <p className="subheading-text">
+          {itemCategory.title} ({itemCategory.itemCards.length})
+        </p>
 
         {isVisible ? (
           <FaChevronUp onClick={() => setIsVisible(false)} />
