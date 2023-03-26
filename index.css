@@ -435,14 +435,6 @@
   color: white;
 }
 
-.error-container {
-  background-image: linear-gradient(
-    131deg,
-    #4f41d0 0%,
-    #332d8e 46%,
-    #0b0840 100%
-  );
-}
 .error-page {
   display: flex;
   flex-direction: column;
@@ -450,7 +442,7 @@
   justify-content: center;
   height: 100vh;
   gap: 1rem;
-  color: wheat;
+  color: midnightblue;
 }
 
 .error-img {
