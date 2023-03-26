@@ -5,8 +5,6 @@ import { getCartTotal } from "../utils/totalPrice";
 import ItemQuantity from "./ItemQuantity";
 
 const CartItems = ({ cartItems }) => {
-  console.log("cart", cartItems);
-
   const totalAmount = getCartTotal(cartItems);
 
   return (

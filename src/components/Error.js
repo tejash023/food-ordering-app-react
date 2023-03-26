@@ -9,7 +9,7 @@ const Error = () => {
         <img className="error-img" src={img} />
         <h1>Oops!!</h1>
         <h2>You might have landed on a different planet!</h2>
-        <p>{err.status + " : " + err.statusText}</p>
+        {err && <p>{err.status + " : " + err.statusText}</p>}
         <button className="error-button">
           <Link to="/">Back to Home</Link>
         </button>

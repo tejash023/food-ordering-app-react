@@ -22,6 +22,7 @@ import Cart from "./components/Cart";
 import { ShimmerBlock } from "./components/Shimmer";
 import RestaurantDetails from "./components/RestaurantDetails";
 import Checkout from "./components/Checkout";
+import OrderSummary from "./components/OrderSummary";
 
 //lazy load about component
 const About = lazy(() => import("./components/About"));
@@ -76,6 +77,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/checkout",
         element: <Checkout />,
+      },
+      {
+        path: "/order-summary",
+        element: <OrderSummary />,
       },
     ],
   },

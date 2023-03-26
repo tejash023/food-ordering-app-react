@@ -9,8 +9,6 @@ import { Link } from "react-router-dom";
 const Checkout = () => {
   const [userAddress, setUserAddress] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
-  console.log(userAddress);
-  console.log(paymentMethod);
   return (
     <div className="container checkout">
       <p className="heading-text">Checkout</p>
@@ -72,7 +70,7 @@ const Checkout = () => {
         )}
       </div>
       {userAddress && paymentMethod && (
-        <Link to="" className="place-order mtop20">
+        <Link to="/order-summary" className="place-order mtop20">
           Place Order
         </Link>
       )}
