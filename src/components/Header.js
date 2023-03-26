@@ -1,17 +1,12 @@
 import { NavLink, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { BsHandbagFill, BsHandbag } from "react-icons/bs";
-import PlacesAutocomplete from "./PlacesAutocomplete";
-
-const loggedInUser = () => {
-  //API Call
-  return false;
-};
 
 const Title = () => {
   return (
     <Link to="/" className="logo-items">
       <img
+        data-testid="logo"
         className="logo"
         alt="logo"
         src="https://icon-library.com/images/food-app-icon/food-app-icon-0.jpg"
@@ -47,7 +42,9 @@ const Header = () => {
                 ) : (
                   <BsHandbag size="2.2rem" />
                 )}
-                <span className="cart-count">{cartCount}</span>
+                <span data-testid="cart" className="cart-count">
+                  {cartCount}
+                </span>
               </Link>
             </ul>
           </div>
