@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <p className="paragraph colwhite">Go Foods. </p>
-      <p paragraph colwhite>
+      <p className="paragraph colwhite">
         Developed by Tejash{" "}
         <a href="https://github.com/tejash023">
           {" "}

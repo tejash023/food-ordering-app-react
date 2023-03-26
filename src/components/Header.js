@@ -41,14 +41,14 @@ const Header = () => {
                 <li>Contact</li>
               </NavLink>
 
-              <NavLink to="/cart" className="cart-logo">
+              <Link to="/cart" className="cart-logo">
                 {cartCount > 0 ? (
                   <BsHandbagFill size="2.2rem" />
                 ) : (
                   <BsHandbag size="2.2rem" />
                 )}
                 <span className="cart-count">{cartCount}</span>
-              </NavLink>
+              </Link>
             </ul>
           </div>
         </div>
