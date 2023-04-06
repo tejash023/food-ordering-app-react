@@ -772,8 +772,10 @@
     width: 55%;
   }
   .card {
-    width: 260px;
-    height: 270px;
+    width: 310px;
+    height: 310px;
+    border-radius: 10px;
+    border: 1.5px solid #e2e1e1;
   }
   .footer {
     background-image: linear-gradient(
