@@ -1,7 +1,9 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import CartItems from "./CartItems";
+
 import cartImage from "../assets/svg/empty.svg";
+
+import CartItems from "../components/CartItems";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);

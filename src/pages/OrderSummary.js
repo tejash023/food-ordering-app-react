@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import ConfirmOrder from "../assets/svg/confirmed.svg";
-import { TbDiscountCheckFilled } from "react-icons/tb";
-import { GrAdd, GrSubtract } from "react-icons/gr";
-import { getCartTotal } from "../utils/totalPrice";
-import Error from "./Error";
+
 import { v4 as uuid } from "uuid";
+import { TbDiscountCheckFilled } from "react-icons/tb";
+
+import ConfirmOrder from "../assets/svg/confirmed.svg";
+
+import { getCartTotal } from "../utils/totalPrice";
 import { clearCart } from "../utils/cartSlice";
+
+import Error from "../components/Error";
 
 const OrderSummary = () => {
   const cartItems = useSelector((store) => store.cart.items);

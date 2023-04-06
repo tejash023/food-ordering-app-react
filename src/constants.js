@@ -4,11 +4,14 @@ export const FETCH_RESTAURANTS =
 export const IMG_CDN_URL =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
-// export const FETCH_MENU_URL =
-//   "https://www.swiggy.com/dapi/menu/v4/full?lat=25.8773651&lng=86.5927887&menuId=";
-
 export const FETCH_MENU_URL =
   "https://gofoodsserver.onrender.com/api/menu/?lat=25.5940947&lng=85.1375645&restaurantId=";
+
+export const aboutContent = {
+  title: "Get your food delivery without the hassle!",
+  description:
+    "Go Foods was founded with a simple mission: to make it easier for people to get their food delivered. With a food delivery app in India, they make it easy for people to order food from their favorite restaurants and have it delivered right to their door. They work with some of the best restaurants in the area, so people can always get the food they want, when they want it. Whether they're in the mood for Indian food, Italian food, or something else, Go Foods has them covered. Plus, they offer great discounts on food delivery when people order through the app. With Go Foods, there's no need to go out to eat; they can bring the restaurant to you.",
+};
 
 export const FAQs = [
   {

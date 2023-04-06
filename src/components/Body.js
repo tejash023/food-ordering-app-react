@@ -6,6 +6,7 @@ import { filterData } from "../utils/helper";
 import { FETCH_RESTAURANTS } from "../constants";
 import useOnline from "../utils/useOnline";
 import Loader from "./Loader";
+import NotFound from "./NotFound";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -52,30 +53,33 @@ const Body = () => {
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
-          }}
-        />
-        <button
-          className="search-btn"
-          onClick={() => {
+            console.log("st", searchText);
             //need to filter the data
             const data = filterData(searchText, allRestaurants);
+
             // update the state - restuarants
             setFilteredRestaurants(data);
           }}
-        >
-          Search
-        </button>
+          onBlur={() => {
+            setFilteredRestaurants(allRestaurants);
+            setSearchText("");
+          }}
+        />
       </div>
-      <div className="restaurant-lists">
-        {filteredRestaurants.map((restaurant) => (
-          <Link
-            to={"/restaurant/" + restaurant.data.id}
-            key={restaurant.data.id}
-          >
-            <RestaurantCards {...restaurant.data} />
-          </Link>
-        ))}
-      </div>
+      {filteredRestaurants.length === 0 ? (
+        <NotFound />
+      ) : (
+        <div className="restaurant-lists">
+          {filteredRestaurants.map((restaurant) => (
+            <Link
+              to={"/restaurant/" + restaurant.data.id}
+              key={restaurant.data.id}
+            >
+              <RestaurantCards {...restaurant.data} />
+            </Link>
+          ))}
+        </div>
+      )}
     </>
   );
 };

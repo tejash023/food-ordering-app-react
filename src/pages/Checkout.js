@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import { address } from "../constants";
+
 import { BiHomeHeart } from "react-icons/bi";
 import { HiOfficeBuilding } from "react-icons/hi";
 import { BsFillCreditCardFill } from "react-icons/bs";
 import { FaHandsHelping } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 const Checkout = () => {
   const [userAddress, setUserAddress] = useState("");

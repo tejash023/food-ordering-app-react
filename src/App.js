@@ -13,6 +13,8 @@ import {
 import { Provider } from "react-redux";
 import store from "./utils/store";
 
+//pages
+
 //Components
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -22,12 +24,12 @@ import { ShimmerBlock, ShimmerLines } from "./components/Shimmer";
 import RestaurantDetails from "./components/RestaurantDetails";
 import Loader from "./components/Loader";
 
-//lazy loading component
-const About = lazy(() => import("./components/About"));
-const Contact = lazy(() => import("./components/Contact"));
-const Cart = lazy(() => import("./components/Cart"));
-const Checkout = lazy(() => import("./components/Checkout"));
-const OrderSummary = lazy(() => import("./components/OrderSummary"));
+//lazy loading pages
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Cart = lazy(() => import("./pages/Cart"));
+const Checkout = lazy(() => import("./pages/Checkout"));
+const OrderSummary = lazy(() => import("./pages/OrderSummary"));
 
 const AppLayout = () => {
   return (
