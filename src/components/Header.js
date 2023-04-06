@@ -1,4 +1,4 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { BsHandbagFill, BsHandbag } from "react-icons/bs";
 
@@ -19,6 +19,9 @@ const Title = () => {
 const Header = () => {
   const cartCount = useSelector((store) => store.cart.totalItemsCount);
 
+  const location = useLocation();
+  // console.log(location.pathname);
+
   return (
     <div className="header">
       <div className="header-items">
@@ -36,16 +39,19 @@ const Header = () => {
                 <li>Contact</li>
               </NavLink>
 
-              <Link to="/cart" className="cart-logo">
-                {cartCount > 0 ? (
-                  <BsHandbagFill size="2.2rem" />
-                ) : (
-                  <BsHandbag size="2.2rem" />
+              {location.pathname !== "/checkout" &&
+                location.pathname !== "/order-summary" && (
+                  <Link to="/cart" className="cart-logo">
+                    {cartCount > 0 ? (
+                      <BsHandbagFill size="2.2rem" />
+                    ) : (
+                      <BsHandbag size="2.2rem" />
+                    )}
+                    <span data-testid="cart" className="cart-count">
+                      {cartCount}
+                    </span>
+                  </Link>
                 )}
-                <span data-testid="cart" className="cart-count">
-                  {cartCount}
-                </span>
-              </Link>
             </ul>
           </div>
         </div>

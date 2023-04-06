@@ -9,6 +9,7 @@ const Cart = () => {
   return (
     <div className="container cart-container">
       <h2 className="heading-text">Cart Items</h2>
+
       {Object.keys(cartItems).length > 0 ? (
         <CartItems cartItems={cartItems} />
       ) : (
