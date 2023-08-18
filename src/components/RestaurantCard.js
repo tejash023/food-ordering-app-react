@@ -5,9 +5,10 @@ const RestaurantCards = ({
   name,
   cuisines,
   cloudinaryImageId,
-  lastMileTravelString,
+  sla,
   avgRating,
-  costForTwoString,
+  costForTwo,
+  locality,
 }) => {
   let ratingType;
   if (avgRating >= 4.0) {
@@ -19,10 +20,14 @@ const RestaurantCards = ({
   }
   return (
     <div className="card" key={id}>
-      <img src={IMG_CDN_URL + cloudinaryImageId} />
+      <div className="res-img">
+        <img src={IMG_CDN_URL + cloudinaryImageId} />
+      </div>
+
       <div className="res-name">
         <h5 className="resName">{name}</h5>
         <p>{cuisines.join(", ")}</p>
+        <p>{locality}</p>
       </div>
       <div className="res-info">
         {avgRating && (
@@ -32,8 +37,8 @@ const RestaurantCards = ({
           </p>
         )}
 
-        <p> {lastMileTravelString}</p>
-        <p> {costForTwoString}</p>
+        <p> {sla.lastMileTravelString}</p>
+        <p> {costForTwo}</p>
       </div>
     </div>
   );
