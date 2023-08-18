@@ -86,7 +86,7 @@
   align-items: center;
 
   margin: auto 5%;
-  padding: 5px;
+  padding: 1% 5px;
 }
 .navigation-menu {
   display: flex;
@@ -114,7 +114,7 @@
 }
 
 .logo {
-  width: 65px;
+  width: 50px;
 }
 
 .search-container {
