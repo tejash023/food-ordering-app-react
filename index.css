@@ -425,12 +425,7 @@
 }
 
 .footer {
-  background-image: linear-gradient(
-    131deg,
-    #000000 0%,
-    #573692 46%,
-    #040313 100%
-  );
+  background: rgb(2, 6, 12);
   height: auto;
   color: white;
   display: flex;
