@@ -3,23 +3,38 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { useState } from "react";
 
 const RestaurantItemCategory = ({ itemCategory }) => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   return (
     <div className="item-category">
-      <div className="item-category-header">
-        <p className="subheading-text">
-          {itemCategory.title} ({itemCategory.itemCards.length})
-        </p>
+      {isVisible ? (
+        <div
+          className="item-category-header"
+          onClick={() => setIsVisible(false)}
+        >
+          <p className="subheading-text">
+            {itemCategory.title} ({itemCategory.itemCards.length})
+          </p>
 
-        {isVisible ? (
-          <FaChevronUp onClick={() => setIsVisible(false)} />
-        ) : (
-          <FaChevronDown onClick={() => setIsVisible(true)} />
-        )}
-      </div>
+          <FaChevronUp />
+        </div>
+      ) : (
+        <div
+          className="item-category-header"
+          onClick={() => setIsVisible(true)}
+        >
+          <p className="subheading-text">
+            {itemCategory.title} ({itemCategory.itemCards.length})
+          </p>
+
+          <FaChevronDown />
+        </div>
+      )}
+
       {!isVisible && <div className="section-border"></div>}
 
-      {isVisible && <RestaurantMenu menuItems={itemCategory.itemCards} />}
+      {isVisible && (
+        <RestaurantMenu menuItems={itemCategory.itemCards.slice(1)} />
+      )}
     </div>
   );
 };

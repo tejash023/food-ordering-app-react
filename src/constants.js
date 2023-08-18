@@ -1,5 +1,5 @@
 export const FETCH_RESTAURANTS =
-  "https://gofoodsserver.onrender.com/api/restaurants/?lat=25.6039168&lng=85.1360248";
+  "https://gofoodsserver.onrender.com/api/restaurants/?lat=12.9715987&lng=77.5945627";
 
 export const IMG_CDN_URL =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
