@@ -18,13 +18,32 @@ const Body = () => {
     getRestaurants();
   }, []);
 
+  // async function getRestaurant to fetch Swiggy API data
   async function getRestaurants() {
-    const data = await fetch(FETCH_RESTAURANTS);
-    const json = await data.json();
-    if (json) {
-      setAllRestaurants(json.data?.cards[2]?.data?.data?.cards);
-      setFilteredRestaurants(json.data?.cards[2]?.data?.data?.cards);
+    const response = await fetch(FETCH_RESTAURANTS);
+    const json = await response.json();
+
+    // initialize checkJsonData() function to check Swiggy Restaurant data
+    async function checkJsonData(jsonData) {
+      for (let i = 0; i < jsonData?.data?.cards.length; i++) {
+        // initialize checkData for Swiggy Restaurant data
+        let checkData =
+          json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants;
+
+        // if checkData is not undefined then return it
+        if (checkData !== undefined) {
+          return checkData;
+        }
+      }
     }
+
+    // call the checkJsonData() function which return Swiggy Restaurant data
+    const resData = await checkJsonData(json);
+
+    // update the state variable restaurants with Swiggy API data
+    setAllRestaurants(resData);
+    setFilteredRestaurants(resData);
   }
 
   // not render component (Early return)
@@ -53,7 +72,6 @@ const Body = () => {
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
-            console.log("st", searchText);
             //need to filter the data
             const data = filterData(searchText, allRestaurants);
 
@@ -72,10 +90,10 @@ const Body = () => {
         <div className="restaurant-lists">
           {filteredRestaurants.map((restaurant) => (
             <Link
-              to={"/restaurant/" + restaurant.data.id}
-              key={restaurant.data.id}
+              to={"/restaurant/" + restaurant.info.id}
+              key={restaurant.info.id}
             >
-              <RestaurantCards {...restaurant.data} />
+              <RestaurantCards {...restaurant.info} />
             </Link>
           ))}
         </div>

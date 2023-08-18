@@ -13,8 +13,6 @@ import {
 import { Provider } from "react-redux";
 import store from "./utils/store";
 
-//pages
-
 //Components
 import Header from "./components/Header";
 import Body from "./components/Body";
