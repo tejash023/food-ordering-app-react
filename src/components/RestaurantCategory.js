@@ -1,7 +1,10 @@
 import RestaurantNestedItemCategory from "./RestaurantCategory/RestaurantNestedItemCategory";
 import RestaurantItemCategory from "./RestaurantCategory/RestaurantItemCategory";
+import CartNavigation from "./CartNavigation";
+import { useSelector } from "react-redux";
 
 const RestaurantCategory = ({ menu }) => {
+  const cartCount = useSelector((store) => store.cart.totalItemsCount);
   return (
     <div className="menu">
       {menu.map((item, index) => (
@@ -13,6 +16,7 @@ const RestaurantCategory = ({ menu }) => {
           )}
         </div>
       ))}
+      {cartCount > 0 && <CartNavigation />}
     </div>
   );
 };

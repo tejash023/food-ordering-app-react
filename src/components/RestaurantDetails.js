@@ -3,6 +3,7 @@ import { ShimmerBlock, ShimmerLines } from "./Shimmer";
 import useRestaurantDetails from "../utils/useRestaurantDetails";
 import RestaurantCategory from "./RestaurantCategory";
 import RestaurantInfo from "./RestaurantInfo";
+import CartNavigation from "./CartNavigation";
 
 const RestaurantDetails = () => {
   const { resId } = useParams();
