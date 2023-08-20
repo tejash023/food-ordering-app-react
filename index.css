@@ -758,14 +758,28 @@
 }
 
 .cart-navigation {
-  background: green;
+  color: #fff;
+  background: #4f9639;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  display: flex;
+  position: sticky;
+  bottom: 15px;
+  width: 85%;
+  margin: auto;
+}
+
+.cart-navigation a {
   color: white;
-  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.cart-navigation__link {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
-  bottom: 20px;
+  gap: 0.6rem;
 }
 
 /* Media Queries */
