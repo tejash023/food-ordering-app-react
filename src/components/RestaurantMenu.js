@@ -36,7 +36,11 @@ const RestaurantMenu = ({ menuItems }) => {
 
             <h4>{item.card.info?.name}</h4>
 
-            <p>₹{item.card.info?.price / 100}</p>
+            {item.card?.info?.price ? (
+              <p>₹{item.card.info?.price / 100}</p>
+            ) : (
+              <p>₹{item.card.info?.defaultPrice / 100}</p>
+            )}
             <span className="item-desc">{item.card.info?.description}</span>
           </div>
           <div className="item-img">

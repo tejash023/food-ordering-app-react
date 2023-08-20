@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 const RestaurantCategory = ({ menu }) => {
   const cartCount = useSelector((store) => store.cart.totalItemsCount);
+  console.log(menu);
   return (
     <div className="menu">
       {menu.map((item, index) => (
