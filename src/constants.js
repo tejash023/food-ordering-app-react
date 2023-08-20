@@ -49,9 +49,9 @@ export const FAQs = [
 export const address = [
   {
     id: 228,
-    Name: "John",
+    Name: "Dr. Sheldon Cooper",
     Mobile: "5186047362",
-    Address: "Boring Road, Patna, Bihar 800001",
+    Address: "Kormangala, Bangalore, KR 500001",
     AddressType: "Home",
   },
 
@@ -59,14 +59,21 @@ export const address = [
     id: 229,
     Name: "Hulk",
     Mobile: "4161071256",
-    Address: "Kankarbagh, Patna, Bihar 800020",
+    Address: "Indiranagar, Bangalore, KR 500020",
     AddressType: "Office",
   },
   {
     id: 234,
     Name: "Steve Rogers",
     Mobile: "2304802741",
-    Address: "Rajendra Nagar, Patna, Bihar 800016",
+    Address: "BTM Layout, Bangalore, KR 500016",
+    AddressType: "Others",
+  },
+  {
+    id: 238,
+    Name: "Robert Downey Jr.",
+    Mobile: "2304802741",
+    Address: "BTM Layout, Bangalore, KR 500016",
     AddressType: "Others",
   },
 ];

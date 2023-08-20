@@ -14,7 +14,11 @@ const CartItems = ({ cartItems }) => {
           <p>{item.name}</p>
           <ItemQuantity item={item} key={item.id} />
           <div className="cart-item-actions">
-            <p>₹ {item.price / 100}</p>
+            {item.price ? (
+              <p>₹{item.price / 100}</p>
+            ) : (
+              <p>₹{item.defaultPrice / 100}</p>
+            )}
           </div>
         </div>
       ))}
