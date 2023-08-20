@@ -179,9 +179,6 @@
   border-radius: 10px;
 }
 
-.res-img > img:hover {
-}
-
 .resName {
   font-size: 0.9rem;
   font-weight: 500;
@@ -592,7 +589,8 @@
 }
 
 .faq-section {
-  margin: 10px 6%;
+  margin: 15px 2%;
+  cursor: pointer;
 }
 
 .faq-title {
