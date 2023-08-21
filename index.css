@@ -179,9 +179,23 @@
   box-shadow: rgba(28, 28, 28, 0.12) 0px 0.4rem 1.8rem;
 }
 
+.res-img {
+  position: relative;
+}
+
 .res-img > img {
   width: 100%;
   border-radius: 10px;
+}
+
+.img-discount-info {
+  position: absolute;
+  left: 0;
+  background: #256fef;
+  bottom: 16px;
+  color: white;
+  padding: 1px 5px;
+  font-weight: 500;
 }
 
 .resName {
