@@ -7,6 +7,9 @@ export const IMG_CDN_URL =
 export const FETCH_MENU_URL =
   "https://gofoodsserver.onrender.com/api/menu/?lat=25.5940947&lng=85.1375645&restaurantId=";
 
+export const CATEGORY_MENU_URL =
+  "https://gofoodsserver.onrender.com/api/category/?lat=12.9715987&lng=77.5945627&collectionId=";
+
 export const aboutContent = {
   title: "Get your food delivery without the hassle!",
   description:
