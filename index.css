@@ -5,7 +5,11 @@
   margin: 0;
   padding: 0;
 }
-
+.main-content-text {
+  font-size: 1.75rem !important;
+  margin: 1% 7.5%;
+  color: #e68c47;
+}
 .heading-text {
   font-weight: 600;
   font-size: 1.2rem;

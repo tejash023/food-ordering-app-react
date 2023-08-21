@@ -87,16 +87,21 @@ const Body = () => {
       {filteredRestaurants.length === 0 ? (
         <NotFound />
       ) : (
-        <div className="restaurant-lists">
-          {filteredRestaurants.map((restaurant) => (
-            <Link
-              to={"/restaurant/" + restaurant.info.id}
-              key={restaurant.info.id}
-            >
-              <RestaurantCards {...restaurant.info} />
-            </Link>
-          ))}
-        </div>
+        <>
+          <h1 className="main-content-text">
+            Restaurants with online food delivery in Bangalore
+          </h1>
+          <div className="restaurant-lists">
+            {filteredRestaurants.map((restaurant) => (
+              <Link
+                to={"/restaurant/" + restaurant.info.id}
+                key={restaurant.info.id}
+              >
+                <RestaurantCards {...restaurant.info} />
+              </Link>
+            ))}
+          </div>
+        </>
       )}
     </>
   );
