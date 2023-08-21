@@ -64,26 +64,6 @@ const Body = () => {
     <ShimmerCards />
   ) : (
     <>
-      <div className="search-container">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search restaurants.."
-          value={searchText}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-            //need to filter the data
-            const data = filterData(searchText, allRestaurants);
-
-            // update the state - restuarants
-            setFilteredRestaurants(data);
-          }}
-          onBlur={() => {
-            setFilteredRestaurants(allRestaurants);
-            setSearchText("");
-          }}
-        />
-      </div>
       {filteredRestaurants.length === 0 ? (
         <NotFound />
       ) : (
@@ -98,6 +78,7 @@ const Body = () => {
                 key={restaurant.info.id}
               >
                 <RestaurantCards {...restaurant.info} />
+                {console.log(restaurant.info)}
               </Link>
             ))}
           </div>

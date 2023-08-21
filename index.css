@@ -6,9 +6,10 @@
   padding: 0;
 }
 .main-content-text {
-  font-size: 1.75rem !important;
-  margin: 1% 7.5%;
-  color: #e68c47;
+  font-size: 1.75rem;
+  margin: 1% 7%;
+  color: #000000e7;
+  font-weight: 400;
 }
 .heading-text {
   font-weight: 600;
@@ -159,9 +160,8 @@
 }
 
 .card {
-  width: 240px;
-  height: 280px;
-
+  width: 330px;
+  height: auto;
   padding: 10px;
   margin: 10px;
   font-size: 0.75rem;
@@ -170,12 +170,13 @@
   flex-direction: column;
   justify-content: space-around;
   gap: 0.5rem;
+  border: 0.1rem solid transparent;
 }
 
 .card:hover {
+  border: 0.1rem solid rgb(232, 232, 232);
   border-radius: 10px;
-  transform: scale(1.03);
-  transition: all 0.1s ease-in;
+  box-shadow: rgba(28, 28, 28, 0.12) 0px 0.4rem 1.8rem;
 }
 
 .res-img > img {
@@ -190,11 +191,18 @@
   margin-bottom: 6px;
 }
 
+.resName__details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .res-name p {
   color: #868383;
   height: 20px;
   overflow: hidden;
   display: -webkit-box;
+  max-width: 180px;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
@@ -204,10 +212,17 @@
   justify-content: space-between;
 }
 
+.res-info p:first-child {
+  font-weight: 500;
+}
+
 .ratings {
-  color: white;
+  color: white !important;
   padding: 3px 5px;
   font-size: 0.7rem;
+  border-radius: 5px;
+  font-weight: 600;
+  height: 17px !important;
 }
 .green {
   background-color: green;
@@ -789,6 +804,10 @@
 @media only screen and (max-width: 700px) {
   .header-items {
     margin: initial;
+  }
+  .main-content-text {
+    font-size: 1rem;
+    margin: auto 11%;
   }
 
   .logo {

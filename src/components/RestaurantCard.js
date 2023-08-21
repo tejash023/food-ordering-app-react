@@ -26,18 +26,20 @@ const RestaurantCards = ({
 
       <div className="res-name">
         <h5 className="resName">{name}</h5>
-        <p>{cuisines.join(", ")}</p>
+        <div className="resName__details">
+          <p>{cuisines.join(", ")}</p>
+          {avgRating && (
+            <p className={"ratings " + ratingType}>
+              <i className="fa fa-star"></i>
+              {avgRating}
+            </p>
+          )}
+        </div>
+
         <p>{locality}</p>
       </div>
       <div className="res-info">
-        {avgRating && (
-          <p className={"ratings " + ratingType}>
-            <i className="fa fa-star"></i>
-            {avgRating}
-          </p>
-        )}
-
-        <p> {sla.lastMileTravelString}</p>
+        <p> {sla.deliveryTime} mins</p>
         <p> {costForTwo}</p>
       </div>
     </div>
