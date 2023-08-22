@@ -1,6 +1,5 @@
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { BsHandbagFill, BsHandbag } from "react-icons/bs";
 
 const Title = () => {
   return (
@@ -29,7 +28,7 @@ const Header = () => {
         <div className="navigation-menu">
           <div className="nav-items">
             <ul>
-              <li>
+              <li className="search-header-box">
                 <NavLink to="/search" className="search-header">
                   <svg
                     className="searchSVG"

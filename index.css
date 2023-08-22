@@ -114,6 +114,10 @@
   margin: auto 5%;
   padding: 1% 5px;
 }
+
+.bottom-header {
+  display: none;
+}
 .navigation-menu {
   display: flex;
   align-items: center;
@@ -907,9 +911,17 @@
 /* Media Queries */
 
 @media only screen and (max-width: 700px) {
+  .header {
+    height: 55px;
+    padding: 10px 20px;
+  }
   .header-items {
     margin: initial;
   }
+  .search-header-box {
+    display: none;
+  }
+
   .main-content-text {
     margin: 2%;
     font-size: 1rem;
@@ -917,9 +929,8 @@
   }
 
   .main-content-subtext {
-    margin: 2%;
     font-size: 0.8rem;
-    margin-left: 10%;
+    margin: 2% 4% 2% 10%;
   }
 
   .breadcrumbs {
@@ -945,6 +956,10 @@
     width: 310px;
     height: auto;
     border-radius: 10px;
+  }
+  .restaurant-lists {
+    margin: auto 3%;
+    justify-content: center;
   }
   .footer {
     background-image: linear-gradient(
@@ -1002,6 +1017,9 @@
   }
   .order-summary-details {
     width: 100%;
+  }
+  .footer {
+    display: none;
   }
 }
 
