@@ -159,6 +159,29 @@
   background-color: #2e2e2e;
 }
 
+.category-menu {
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+  white-space: nowrap; /* Prevent content from wrapping */
+
+  margin: auto 4%;
+}
+
+.category_menu_item {
+  padding: 5px;
+  display: inline-block;
+}
+
+.category_menu_item:hover {
+  cursor: pointer;
+}
+
+.category_menu_item img {
+  width: 180px;
+}
+
 .card {
   width: 330px;
   height: auto;
@@ -835,6 +858,9 @@
   }
   .search-container > input {
     width: 55%;
+  }
+  .category_menu_item img {
+    width: 105px;
   }
   .card {
     width: 310px;

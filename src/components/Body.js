@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import RestaurantCards from "./RestaurantCard";
+import CategoryMenu from "./CategoryMenu";
 import { ShimmerCards } from "./Shimmer";
 import { filterData } from "../utils/helper";
 import { FETCH_RESTAURANTS } from "../constants";
@@ -11,6 +12,7 @@ import NotFound from "./NotFound";
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [categoryMenu, setCategoryMenu] = useState([]);
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
@@ -42,6 +44,9 @@ const Body = () => {
     const resData = await checkJsonData(json);
 
     // update the state variable restaurants with Swiggy API data
+    setCategoryMenu(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.info
+    );
     setAllRestaurants(resData);
     setFilteredRestaurants(resData);
   }
@@ -88,6 +93,7 @@ const Body = () => {
         <NotFound />
       ) : (
         <>
+          <CategoryMenu categoryMenu={categoryMenu} />
           <h1 className="main-content-text">
             Restaurants with online food delivery in Bangalore
           </h1>
