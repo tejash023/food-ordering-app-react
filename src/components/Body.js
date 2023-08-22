@@ -93,7 +93,8 @@ const Body = () => {
         <NotFound />
       ) : (
         <>
-          <CategoryMenu categoryMenu={categoryMenu} />
+          {" "}
+          {categoryMenu && <CategoryMenu categoryMenu={categoryMenu} />}
           <h1 className="main-content-text">
             Restaurants with online food delivery in Bangalore
           </h1>
