@@ -21,6 +21,8 @@ import Error from "./components/Error";
 import { ShimmerBlock, ShimmerLines } from "./components/Shimmer";
 import RestaurantDetails from "./components/RestaurantDetails";
 import Loader from "./components/Loader";
+import RestaurantCards from "./components/RestaurantCard";
+import CategoryDetails from "./components/CategoryDetails";
 
 //lazy loading pages
 const About = lazy(() => import("./pages/About"));
@@ -70,6 +72,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:resId",
         element: <RestaurantDetails />,
+      },
+      {
+        path: "/restaurant/category/:categoryId",
+        element: <CategoryDetails />,
       },
       {
         path: "/cart",

@@ -9,7 +9,6 @@ const RestaurantDetails = () => {
   const { resId } = useParams();
 
   const restaurant = useRestaurantDetails(resId);
-  // console.log(restaurant);
 
   return !restaurant ? (
     <ShimmerLines />

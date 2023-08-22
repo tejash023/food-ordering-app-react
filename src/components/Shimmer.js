@@ -26,7 +26,7 @@ export const ShimmerBlock = () => {
   return (
     <div className="shimmer">
       <div className="shimmer-lines">
-        {Array(5)
+        {Array(3)
           .fill("")
           .map((e, index) => (
             <div

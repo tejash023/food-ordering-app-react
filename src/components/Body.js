@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import RestaurantCards from "./RestaurantCard";
+import RestaurantCard from "./RestaurantCard";
 import CategoryMenu from "./CategoryMenu";
 import { ShimmerCards } from "./Shimmer";
 import { filterData } from "../utils/helper";
@@ -103,7 +103,7 @@ const Body = () => {
                 to={"/restaurant/" + restaurant.info.id}
                 key={restaurant.info.id}
               >
-                <RestaurantCards {...restaurant.info} />
+                <RestaurantCard {...restaurant.info} />
               </Link>
             ))}
           </div>

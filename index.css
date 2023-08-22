@@ -9,7 +9,13 @@
   font-size: 1.75rem;
   margin: 1% 7%;
   color: #000000e7;
-  font-weight: 400;
+  font-weight: 500;
+}
+.main-content-subtext {
+  font-size: 1.25rem;
+  margin: 1% 7%;
+  color: #000000e7;
+  font-weight: 300;
 }
 .heading-text {
   font-weight: 600;
@@ -122,6 +128,16 @@
   width: 50px;
 }
 
+.breadcrumbs {
+  font-size: 0.8rem;
+  color: #ff9800;
+  margin: 2% 7%;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: dimgray;
+}
 .search-container {
   display: flex;
   justify-content: center;
@@ -176,6 +192,8 @@
 
 .category_menu_item:hover {
   cursor: pointer;
+  transform: scale(1.08);
+  transition: all 0.2s ease-in-out;
 }
 
 .category_menu_item img {
@@ -843,8 +861,19 @@
     margin: initial;
   }
   .main-content-text {
+    margin: 2%;
     font-size: 1rem;
-    margin: 2% 11%;
+    margin-left: 10%;
+  }
+
+  .main-content-subtext {
+    margin: 2%;
+    font-size: 0.8rem;
+    margin-left: 10%;
+  }
+
+  .breadcrumbs {
+    margin: 5% 10%;
   }
 
   .logo {

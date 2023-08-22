@@ -23,12 +23,12 @@ const RestaurantCards = ({
     <div className="card" key={id}>
       <div className="res-img">
         <img src={IMG_CDN_URL + cloudinaryImageId} />
-        {aggregatedDiscountInfoV3.header && (
+        {aggregatedDiscountInfoV3?.header && (
           <span className="img-discount-info">
             {" "}
-            {aggregatedDiscountInfoV3.header +
+            {aggregatedDiscountInfoV3?.header +
               " " +
-              aggregatedDiscountInfoV3.subHeader.replace("₹", "")}
+              aggregatedDiscountInfoV3?.subHeader?.replace("₹", "")}
           </span>
         )}
       </div>
