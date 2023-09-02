@@ -245,7 +245,7 @@
 
 .card:hover {
   border: 0.1rem solid rgb(232, 232, 232);
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: rgba(28, 28, 28, 0.12) 0px 0.4rem 1.8rem;
 }
 
@@ -255,14 +255,14 @@
 
 .res-img > img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .img-discount-info {
   position: absolute;
   left: 0;
   background: #256fef;
-  bottom: 16px;
+  bottom: 22px;
   color: white;
   padding: 1px 5px;
   font-weight: 500;
@@ -281,6 +281,10 @@
   justify-content: space-between;
 }
 
+.res-name {
+  padding: 0 2px;
+}
+
 .res-name p {
   color: #868383;
   height: 20px;
@@ -294,6 +298,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 2px;
 }
 
 .res-info p:first-child {
