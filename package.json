@@ -29,9 +29,9 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-loading": "^2.0.3",
-    "react-multi-carousel": "^2.8.4",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.9.0",
+    "swiper": "^10.3.0",
     "use-places-autocomplete": "^4.0.0",
     "uuidv4": "^6.2.13"
   },

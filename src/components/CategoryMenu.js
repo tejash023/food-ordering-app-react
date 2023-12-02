@@ -8,6 +8,7 @@ const CategoryMenu = ({ categoryMenu }) => {
   return (
     <div className="category">
       <h1 className="main-content-text">What's on your mind?</h1>
+
       <div className="category-menu">
         {categoryMenu !== undefined &&
           categoryMenu.map((item) => (
