@@ -15,8 +15,6 @@ const useRestaurantDetails = (resId) => {
     const response = await fetch(FETCH_MENU_URL + resId);
     const json = await response.json();
 
-    //console.log(json);
-
     const menuItemsList =
       json.data.cards[4]["groupedCard"].cardGroupMap.REGULAR.cards;
     const itemCategory =
