@@ -15,8 +15,10 @@ const useRestaurantDetails = (resId) => {
     const response = await fetch(FETCH_MENU_URL + resId);
     const json = await response.json();
 
+    //console.log(json);
+
     const menuItemsList =
-      json.data.cards[2]["groupedCard"].cardGroupMap.REGULAR.cards;
+      json.data.cards[4]["groupedCard"].cardGroupMap.REGULAR.cards;
     const itemCategory =
       "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
     const NestedItemCategory =
@@ -32,7 +34,7 @@ const useRestaurantDetails = (resId) => {
     });
 
     const modifiedData = {
-      info: json.data.cards[0].card.card.info,
+      info: json.data.cards[2].card.card.info,
       menu: menu.filter((value) => value !== undefined),
     };
 

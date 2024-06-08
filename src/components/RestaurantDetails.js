@@ -10,6 +10,8 @@ const RestaurantDetails = () => {
 
   const restaurant = useRestaurantDetails(resId);
 
+  console.log("restaurant details", restaurant);
+
   return !restaurant ? (
     <ShimmerLines />
   ) : (
